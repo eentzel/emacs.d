@@ -1,3 +1,6 @@
+; Emacs config file - get latest version from:
+; $HeadURL$
+
 (add-to-list 'load-path "~/elisp")
 
 ; can probably save this somewhere else since I don't use mutt anymore
