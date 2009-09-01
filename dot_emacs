@@ -10,6 +10,15 @@
   (auto-fill-mode 1))
 (add-to-list 'auto-mode-alist '("mutt" . mutt-mode))
 
+; Tuareg mode for OCaml
+(add-to-list 'load-path "~/elisp/tuareg-mode")
+(autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+(autoload 'camldebug "camldebug" "Run the Caml debugger" t)
+(setq auto-mode-alist 
+      (append '(("\\.ml[ily]?$" . tuareg-mode)
+                ("\\.topml$" . tuareg-mode))
+              auto-mode-alist))
+
 ; load Yegge's js2-mode for .js files
 ; EPE 2008-10-08: conflicts with the version of js2-mode included with NXHTML
 (autoload 'js2-mode "js2" nil t)
