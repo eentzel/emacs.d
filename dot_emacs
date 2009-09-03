@@ -33,7 +33,8 @@
 ; load NXHTML
 ; (load "~/Downloads/nxhtml/autostart.el")
 
-(load "~/elisp/syncer.el")
+(if (file-exists-p "~/elisp/syncer.el")
+    (load "~/elisp/syncer.el"))
 (load "~/elisp/split.el")
 
 ; automatically set these modes based on filenames:
