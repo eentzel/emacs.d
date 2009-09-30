@@ -49,6 +49,7 @@
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ; turn on some useful frills
+(fset 'yes-or-no-p 'y-or-n-p)
 (global-font-lock-mode 1)
 (auto-compression-mode 1)
 (put 'set-goal-column 'disabled nil)
