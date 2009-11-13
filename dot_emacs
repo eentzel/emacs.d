@@ -44,6 +44,8 @@
 
 (if (file-exists-p "~/elisp/syncer.el")
     (load "~/elisp/syncer.el"))
+(if (file-exists-p "~/elisp/find-file-in-home-dir.el")
+      (load "~/elisp/find-file-in-home-dir"))
 (load "~/elisp/split.el")
 
 ; automatically set these modes based on filenames:
