@@ -1180,11 +1180,11 @@ The search pattern will be appended, so the
 
 ;;; EPE LMI project search 2009-11-13
 (defun guess-lmi-project-root (path)
-  "Given a path, attempt to guess the project directory.  Current implementation just returns the first directory under $WORKSPACE, or path if path is not located under $WORKSPACE."
+  "Given a path, attempt to guess the project directory.  Current implementation just returns the first directory under $WORKSPACE, or the directory part of path if path is not located under $WORKSPACE."
   (setq workspace (getenv "WORKSPACE"))
   (if (string-match (concat workspace "/[^/]*") path)
       (match-string 0 path)
-    path))
+    (file-name-directory path)))
 
 (defvar anything-current-project-file-search
   '((name . "Current Project Search")
