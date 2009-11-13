@@ -30,6 +30,15 @@
 (yas/initialize)
 (yas/load-directory "~/elisp/yasnippet/snippets")
 
+;; anything setup   
+(require 'anything-config)   
+(global-set-key "\C-j" 'anything)  
+(setq anything-sources '(anything-c-source-buffers+   
+       anything-current-project-file-search
+       anything-c-source-recentf   
+       anything-c-source-org-headline   
+            anything-c-source-buffer-not-found))   
+
 ; load NXHTML
 ; (load "~/Downloads/nxhtml/autostart.el")
 
@@ -54,8 +63,8 @@
 (auto-compression-mode 1)
 (put 'set-goal-column 'disabled nil)
 (setq-default comment-style 'multi-line)
-(iswitchb-mode 1)
-(setq iswitchb-buffer-ignore '("^ " "^\\*[^s]"))
+;(iswitchb-mode 1)                       ; don't need this now that we have anything.el
+;(setq iswitchb-buffer-ignore '("^ " "^\\*[^s]"))
 (setq initial-frame-alist '((top . 40) (left . 10) (width . 100) (height . 50)))
 
 ; bind some useful keys
