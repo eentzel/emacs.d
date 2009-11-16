@@ -1178,29 +1178,6 @@ The search pattern will be appended, so the
   "Source for retrieving files matching the current input pattern with locate.")
 ;; (anything 'anything-c-source-locate)
 
-;;; EPE LMI project search 2009-11-13
-(defun guess-lmi-project-root (path)
-  "Given a path, attempt to guess the project directory.  Current implementation just returns the first directory under $WORKSPACE, or the directory part of path if path is not located under $WORKSPACE."
-  (setq workspace (getenv "WORKSPACE"))
-  (if (string-match (concat workspace "/[^/]*") path)
-      (match-string 0 path)
-    (file-name-directory path)))
-
-(defvar anything-current-project-file-search
-  '((name . "Current Project Search")
-    (candidates . (lambda ()
-                    (let ((args
-                           (format "'%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -iregex '.*%s.*' -print"
-                                   (guess-lmi-project-root anything-buffer-file-name)
-                                   anything-pattern)))
-                      (start-process-shell-command "file-search-process" nil
-                                                   "find" args))))
-    (type . file)
-    (requires-pattern . 4)
-    (delayed))
-  "Source for searching matching files in current project recursively.")
-;; (anything 'anything-current-project-file-search)
-
 ;;; Recentf files
 (defvar anything-c-source-recentf
   '((name . "Recentf")

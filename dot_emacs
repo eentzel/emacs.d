@@ -31,14 +31,9 @@
 (yas/initialize)
 (yas/load-directory "~/elisp/yasnippet/snippets")
 
-;; anything setup   
-(require 'anything-config)   
-(global-set-key "\C-j" 'anything)  
-(setq anything-sources '(anything-c-source-buffers+   
-       anything-current-project-file-search
-       anything-c-source-recentf   
-       anything-c-source-org-headline   
-            anything-c-source-buffer-not-found))   
+;; load my custom anything config
+(if (file-exists-p "~/elisp/anything-epe.el")
+    (load "~/elisp/anything-epe.el"))
 
 ; load NXHTML
 ; (load "~/Downloads/nxhtml/autostart.el")
