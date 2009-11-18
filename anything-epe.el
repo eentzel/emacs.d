@@ -16,6 +16,9 @@
   "Source for searching matching files in current project recursively.")
 
 (global-set-key "\C-j" 'anything)
+;; lisp-interaction-mode (e.g., the *scratch* buffer) has a useless
+;; local binding for C-j which global-set-key won't override, so also do:
+(define-key lisp-interaction-mode-map "\C-j" 'anything)
 (setq anything-sources '(anything-c-source-buffers+
                          anything-current-project-file-search
                          anything-c-source-recentf
