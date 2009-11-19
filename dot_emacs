@@ -70,6 +70,7 @@
 (global-set-key "\M-s" 'isearch-forward-regexp)
 (global-set-key "\M-r" 'isearch-backward-regexp)
 (global-set-key "\M-p" 'pwd)
+(global-set-key "\M-/" 'hippie-expand)
 
 ; Turns out C-Backspace in Windows does a backward-kill-word.  Is
 ; there any way to rebind it in emacs for consistency?  e.g.:
