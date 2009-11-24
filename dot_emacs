@@ -25,6 +25,10 @@
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+; show SVN status in modeline
+(require 'psvn)
+(add-to-list 'vc-handled-backends 'SVN)
+
 ; load yasnippet
 (add-to-list 'load-path "~/elisp/yasnippet")
 (require 'yasnippet) ;; not yasnippet-bundle
