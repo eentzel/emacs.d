@@ -20,11 +20,6 @@
                 ("\\.topml$" . tuareg-mode))
               auto-mode-alist))
 
-; load Yegge's js2-mode for .js files
-; EPE 2008-10-08: conflicts with the version of js2-mode included with NXHTML
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
 ; show SVN status in modeline
 (require 'psvn)
 (add-to-list 'vc-handled-backends 'SVN)
@@ -42,6 +37,8 @@
 ; load NXHTML
 ; (load "~/Downloads/nxhtml/autostart.el")
 
+(if (file-exists-p "~/elisp/js2-epe.el")
+    (load "~/elisp/js2-epe.el"))
 (if (file-exists-p "~/elisp/syncer.el")
     (load "~/elisp/syncer.el"))
 (if (file-exists-p "~/elisp/find-file-in-home-dir.el")
