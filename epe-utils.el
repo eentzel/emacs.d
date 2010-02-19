@@ -9,3 +9,13 @@ $WORKSPACE."
   (if (string-match (concat workspace "/[^/]*") path)
       (match-string 0 path)
     (file-name-directory path)))
+
+(defun run-command-on-buffer-file (command)
+  (shell-command (concat command " " buffer-file-name))
+  (switch-to-buffer "*Shell Command Output*"))
+
+(defun mark-whole-word ()
+  (interactive)
+  (transient-mark-mode 1)
+  (skip-syntax-backward "\w")
+  (mark-word))
