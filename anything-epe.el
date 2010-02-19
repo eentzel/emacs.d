@@ -5,7 +5,7 @@
   '((name . "Current Project Search")
     (candidates . (lambda ()
                     (let ((args
-                           (format "'%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -iregex '.*%s.*' -print"
+                           (format "-H '%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -iregex '.*%s.*' -print"
                                    (guess-lmi-project-root anything-buffer-file-name)
                                    anything-pattern)))
                       (start-process-shell-command "file-search-process" nil
