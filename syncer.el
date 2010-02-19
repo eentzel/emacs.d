@@ -4,16 +4,28 @@
 ;     environment variable $WORKSPACE must be set
 ;     syncer must be in your $PATH
 
-(setq projects '("ednl" "edpl" "eddk" "edcz" "wdbe" "edfi" "wdnl" "mris" "edse"))  ; add projects as necessary
+(setq projects-alist '( ("ednl" ."ednl")
+                        ("edpl" . "edpl")
+                        ("eddk" ."eddk")
+                        ("edcz" . "edcz")
+                        ("edtas" . "edtas")
+                        ("ed-core-web" . "edtas")
+                        ("ds-core-web" . "edtas")
+                        ("wdbe" . "wdbe")
+                        ("edfi" . "edfi")
+                        ("wdnl" . "wdnl")
+                        ("mris" . "mris")
+                        ("edse" . "edse")))
 (setq workspace (getenv "WORKSPACE"))
 
 (defun syncer ()
   "Call syncer to sync changes to Tomcat if appropriate."
   (when buffer-file-name
-    (dolist (project projects)
-      (when (string-match (concat workspace "/" project "/") buffer-file-name)
-        (if (eq (call-process "syncer2" () () () project) 0)
-            (message (concat "Synced " project " and " (current-message)))
-          (message (concat (current-message) " - couldn't sync " project)))))))
+    (dolist (item projects-alist)
+      (let ((name (car item)) (target (cdr item)))
+        (when (string-match (concat workspace "/" name "/") buffer-file-name)
+          (if (eq (call-process "syncer2" () () () target) 0)
+              (message (concat "Synced " name " and " (current-message)))
+            (message (concat (current-message) " - couldn't sync " name " in " (pwd)))))))))
 
 (add-hook 'after-save-hook 'syncer)
