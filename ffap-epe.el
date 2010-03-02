@@ -1,0 +1,5 @@
+(require 'ffap)
+(defun ffap-lmi-jsp (file)
+ (concat (guess-lmi-project-root buffer-file-name) "/src/main/webapp" file))
+(add-to-list 'ffap-alist '("WEB-INF" . ffap-lmi-jsp))
+(global-set-key "\C-cf" 'ffap)
