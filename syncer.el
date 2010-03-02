@@ -26,6 +26,6 @@
         (when (string-match (concat workspace "/" name "/") buffer-file-name)
           (if (eq (call-process "syncer2" () () () target) 0)
               (message (concat "Synced " name " and " (current-message)))
-            (message (concat (current-message) " - couldn't sync " name " in " (pwd)))))))))
+            (message (concat (current-message) " - couldn't sync " name))))))))
 
 (add-hook 'after-save-hook 'syncer)
