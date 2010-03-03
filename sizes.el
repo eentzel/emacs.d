@@ -1,4 +1,4 @@
-(setq sizes-alist '((232 . 62) (100 . 50))
+(setq sizes-alist '((232 . 62) (175 . 46))
       sizes-list-pos 0)
 
 (defun next-size ()
