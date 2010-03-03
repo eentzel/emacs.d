@@ -76,7 +76,7 @@
 (setq-default comment-style 'multi-line)
 ;(iswitchb-mode 1)                       ; don't need this now that we have anything.el
 ;(setq iswitchb-buffer-ignore '("^ " "^\\*[^s]"))
-(setq initial-frame-alist '((top . 26) (left . 8) (width . 100) (height . 50)))
+(setq initial-frame-alist '((top . 26) (left . 8) (width . 100) (height . 44)))
 
 ; bind some useful keys
 (global-set-key "\M-s" 'isearch-forward-regexp)
