@@ -11,6 +11,11 @@
   (auto-fill-mode 1))
 (add-to-list 'auto-mode-alist '("mutt" . mutt-mode))
 
+(define-derived-mode jsp-mode html-mode "JSP"
+  "Major mode for editing .jsp files - identical to html-mode, but
+  allows some mode hooks to run for jsp-mode but not html-mode")
+(add-to-list 'auto-mode-alist '("\\.jsp$" . jsp-mode))
+
 ; Tuareg mode for OCaml
 (add-to-list 'load-path "~/elisp/tuareg-mode")
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
@@ -61,7 +66,6 @@
 
 ; automatically set these modes based on filenames:
 (add-to-list 'auto-mode-alist '("\\.ftl$" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.jsp$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tag$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . auto-fill-mode))
 
