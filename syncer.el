@@ -10,6 +10,7 @@
                         ("edcz" . "edcz")
                         ("edtas" . "edtas")
                         ("ed-core-web" . "edtas")
+                        ("ed-core-web-3.0" . "ednl")
                         ("ds-core-web" . "edtas")
                         ("wdbe" . "wdbe")
                         ("edfi" . "edfi")
