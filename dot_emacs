@@ -44,8 +44,10 @@
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/elisp/yasnippet-0.6.1c/snippets")
-(yas/load-directory "~/elisp/yasnippet-jstl")
-(yas/load-directory "~/elisp/yasnippet-lm")
+(if (file-exists-p "~/elisp/yasnippet-jstl")
+    (yas/load-directory "~/elisp/yasnippet-jstl"))
+(if (file-exists-p "~/elisp/yasnippet-lm")
+    (yas/load-directory "~/elisp/yasnippet-lm"))
 
 ;; load my custom anything config
 (if (file-exists-p "~/elisp/anything-epe.el")
