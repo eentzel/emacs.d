@@ -11,6 +11,7 @@
                         ("edtas" . "edtas")
                         ("ed-core-web" . "edtas")
                         ("ed-core-web-3.0" . "ednl")
+                        ("ed-core-web-3.3" . "eddk")
                         ("ds-core-web" . "edtas")
                         ("wdbe" . "wdbe")
                         ("edfi" . "edfi")
