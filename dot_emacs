@@ -60,6 +60,8 @@
     (load "~/elisp/syncer.el"))
 (if (file-exists-p "~/elisp/ffap-epe.el")
     (load "~/elisp/ffap-epe.el"))
+(if (file-exists-p "~/elisp/epe-projects.el")
+    (load "~/elisp/epe-projects.el"))
 (if (file-exists-p "~/elisp/mark-whole-word.el")
     (load "~/elisp/mark-whole-word.el"))
 (if (file-exists-p "~/elisp/find-file-in-home-dir.el")
