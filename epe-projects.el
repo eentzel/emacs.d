@@ -1,0 +1,7 @@
+(defun open-project (project)
+  (interactive "sProject name: ")
+  (let ((pomfile (concat (getenv "WORKSPACE") "/" project "/pom.xml")))
+    (if (file-exists-p pomfile)
+        (find-file pomfile)
+      (message (concat "Project " project " doesn't appear to exist")))))
+(global-set-key "\M-j" 'open-project)
