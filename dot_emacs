@@ -70,7 +70,7 @@
 
 ; automatically set these modes based on filenames:
 (add-to-list 'auto-mode-alist '("\\.ftl$" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.tag$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.tag$" . jsp-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . auto-fill-mode))
 
 ; don't put no tabs in my files!
