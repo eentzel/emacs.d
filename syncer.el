@@ -1,6 +1,7 @@
 ; Requirements:
 ;     syncer must be in your $PATH
 
+(require 'epe-utils)
 (setq project-mapping '(("ed-core-web" . "ednl")
                         ("ed-core-web-4.1" . "ednl")
                         ("ed-core-web-3.0" . "ednl")
