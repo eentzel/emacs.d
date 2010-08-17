@@ -15,7 +15,7 @@
   (when buffer-file-name
     (let (name target)
       (setq name (guess-lmi-project-name buffer-file-name))
-      (when (not (string= name ""))
+      (unless (string= name "")
         (setq target (or (assoc-default name project-mapping) name))
         (if (eq (call-process "syncer2" () "*syncer*" () target) 0)
             (message (concat "Synced " name " -> " target " and " (current-message)))
