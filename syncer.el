@@ -15,9 +15,10 @@
   (when buffer-file-name
     (let (name target)
       (setq name (guess-lmi-project-name buffer-file-name))
-      (setq target (or (assoc-default name project-mapping) name))
-      (if (eq (call-process "syncer2" () "*syncer*" () target) 0)
-          (message (concat "Synced " name " -> " target " and " (current-message)))
-        (message (concat (current-message) " - couldn't sync " name))))))
+      (when (not (string= name ""))
+        (setq target (or (assoc-default name project-mapping) name))
+        (if (eq (call-process "syncer2" () "*syncer*" () target) 0)
+            (message (concat "Synced " name " -> " target " and " (current-message)))
+          (message (concat (current-message) " - couldn't sync " name)))))))
 
 (add-hook 'after-save-hook 'syncer)
