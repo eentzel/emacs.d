@@ -16,6 +16,9 @@ $WORKSPACE."
       (match-string 0 path)
     (file-name-directory path)))
 
+(defun guess-lmi-project-name (path)
+  (car (last (split-string (guess-lmi-project-root path) "/"))))
+  
 (defun run-command-on-buffer-file (command)
   (shell-command (concat command " " buffer-file-name))
   (switch-to-buffer "*Shell Command Output*"))
