@@ -17,7 +17,7 @@
       (setq name (guess-lmi-project-name buffer-file-name))
       (unless (string= name "")
         (setq target (or (assoc-default name project-mapping) name))
-        (if (eq (call-process "syncer2" () "*syncer*" () target) 0)
+        (if (eq (call-process "syncer2" () "*syncer*" () target name) 0)
             (message (concat "Synced " name " -> " target " and " (current-message)))
           (message (concat (current-message) " - couldn't sync " name)))))))
 
