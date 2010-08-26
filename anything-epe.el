@@ -1,5 +1,6 @@
 ;; TODO:
-;; refactor the two very similar anything-*-project-file-search definitions into a macro
+;; - refactor the two very similar anything-*-project-file-search definitions into a macro
+;; - make search case-sensitive only if upcase chars occur in anything-pattern
 
 (require 'epe-utils)
 (require 'anything-config)
