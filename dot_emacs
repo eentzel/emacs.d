@@ -83,6 +83,7 @@
 (global-font-lock-mode 1)
 (auto-compression-mode 1)
 (put 'set-goal-column 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
 (setq-default comment-style 'multi-line)
 ;(iswitchb-mode 1)                       ; don't need this now that we have anything.el
 ;(setq iswitchb-buffer-ignore '("^ " "^\\*[^s]"))
