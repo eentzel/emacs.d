@@ -1,37 +1,34 @@
 ;; TODO:
-;; - refactor the two very similar anything-*-project-file-search definitions into a macro
 ;; - make search case-sensitive only if upcase chars occur in anything-pattern
 
 (require 'epe-utils)
 (require 'anything-config)
 
-(defvar anything-current-project-file-search
-  '((name . "Current Project Search")
-    (candidates . (lambda ()
-                    (let ((args
-                           (format "-H '%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -iregex '.*%s.*' -print"
-                                   (guess-lmi-project-root anything-buffer-file-name)
-                                   anything-pattern)))
-                      (start-process-shell-command "file-search-process" nil
-                                                   "find" args))))
-    (type . file)
-    (requires-pattern . 4)
-    (delayed))
-  "Source for searching matching files in current project recursively.")
+(defmacro create-anything-source (name path title)
+  "Define an anything source called name that searches recursively for matching files in path"
+  `(defvar ,name
+     '((name . ,title)
+       (candidates . (lambda ()
+		       (let ((args
+			      (format "-H '%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -iregex '.*%s.*' -print"
+				      ,path
+				      anything-pattern)))
+			 (start-process-shell-command "file-search-process" nil
+						      "find" args))))
+       (type . file)
+       (requires-pattern . 4)
+       (delayed))
+     (concat "Source for searching matching files in " ,path " recursively.")))
 
-(defvar anything-other-project-file-search
-  '((name . "Other Project Search")
-    (candidates . (lambda ()
-                    (let ((args
-                           (format "-H '%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -iregex '.*%s.*' -print"
-                                   (concat (getenv "WORKSPACE") "/" other-project)
-                                   anything-pattern)))
-                      (start-process-shell-command "file-search-process" nil
-                                                   "find" args))))
-    (type . file)
-    (requires-pattern . 4)
-    (delayed))
-  "Source for searching matching files another project (specified in other-project) recursively.")
+(create-anything-source
+ anything-current-project-file-search
+ (guess-lmi-project-root anything-buffer-file-name)
+ "Current Project Search")
+
+(create-anything-source
+ anything-other-project-file-search
+ (concat (getenv "WORKSPACE") "/" other-project)
+ "Other Project Search")
 
 (defun anything-other-project (project)
   (interactive "sProject name: ")
