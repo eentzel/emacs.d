@@ -4,4 +4,3 @@
     (if (file-exists-p pomfile)
         (find-file pomfile)
       (message (concat "Project " project " doesn't appear to exist")))))
-(global-set-key "\M-j" 'open-project)

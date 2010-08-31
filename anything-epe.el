@@ -1,19 +1,40 @@
+;; TODO:
+;; - make search case-sensitive only if upcase chars occur in anything-pattern
+
 (require 'epe-utils)
 (require 'anything-config)
 
-(defvar anything-current-project-file-search
-  '((name . "Current Project Search")
-    (candidates . (lambda ()
-                    (let ((args
-                           (format "-H '%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -iregex '.*%s.*' -print"
-                                   (guess-lmi-project-root anything-buffer-file-name)
-                                   anything-pattern)))
-                      (start-process-shell-command "file-search-process" nil
-                                                   "find" args))))
-    (type . file)
-    (requires-pattern . 4)
-    (delayed))
-  "Source for searching matching files in current project recursively.")
+(defmacro create-anything-source (name path title)
+  "Define an anything source called name that searches recursively for matching files in path"
+  `(defvar ,name
+     '((name . ,title)
+       (candidates . (lambda ()
+		       (let ((args
+			      (format "-H '%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -iregex '.*%s.*' -print"
+				      ,path
+				      anything-pattern)))
+			 (start-process-shell-command "file-search-process" nil
+						      "find" args))))
+       (type . file)
+       (requires-pattern . 4)
+       (delayed))
+     (concat "Source for searching matching files in " ,path " recursively.")))
+
+(create-anything-source
+ anything-current-project-file-search
+ (guess-lmi-project-root anything-buffer-file-name)
+ "Current Project Search")
+
+(create-anything-source
+ anything-other-project-file-search
+ (concat (getenv "WORKSPACE") "/" other-project)
+ "Other Project Search")
+
+(defun anything-other-project (project)
+  (interactive "sProject name: ")
+  (setq other-project project)
+  (anything 'anything-other-project-file-search))
+(global-set-key "\M-j" 'anything-other-project)
 
 (global-set-key "\C-j" 'anything)
 ;; lisp-interaction-mode (e.g., the *scratch* buffer) has a useless
@@ -21,6 +42,7 @@
 (define-key lisp-interaction-mode-map "\C-j" 'anything)
 (setq anything-sources '(anything-c-source-buffers+
                          anything-current-project-file-search
+                         ;; anything-parent-project-file-search
                          anything-c-source-recentf
                          anything-c-source-org-headline
                          anything-c-source-buffer-not-found))

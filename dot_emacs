@@ -36,8 +36,6 @@
 ; load full-ack
 (autoload 'ack-same "full-ack" nil t)
 (autoload 'ack "full-ack" nil t)
-(autoload 'ack-find-same-file "full-ack" nil t)
-(autoload 'ack-find-file "full-ack" nil t)
 
 ; load yasnippet
 (add-to-list 'load-path "~/elisp/yasnippet-0.6.1c")
@@ -85,6 +83,7 @@
 (global-font-lock-mode 1)
 (auto-compression-mode 1)
 (put 'set-goal-column 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
 (setq-default comment-style 'multi-line)
 ;(iswitchb-mode 1)                       ; don't need this now that we have anything.el
 ;(setq iswitchb-buffer-ignore '("^ " "^\\*[^s]"))
@@ -97,6 +96,7 @@
 (global-set-key "\M-/" 'hippie-expand)
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-ck" 'ack)
+(global-set-key "\C-c\C-k" 'ack-same)
 
 ; Turns out C-Backspace in Windows does a backward-kill-word.  Is
 ; there any way to rebind it in emacs for consistency?  e.g.:
