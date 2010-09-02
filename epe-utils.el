@@ -22,3 +22,7 @@ $WORKSPACE."
 (defun run-command-on-buffer-file (command)
   (shell-command (concat command " " buffer-file-name))
   (switch-to-buffer "*Shell Command Output*"))
+
+(defun all-lowercase-p (str)
+  "Return true iff str contains only lowercase characters"
+  (string-equal (downcase str) str))
