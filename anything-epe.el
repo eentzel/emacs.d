@@ -1,6 +1,3 @@
-;; TODO:
-;; - make search case-sensitive only if upcase chars occur in anything-pattern
-
 (require 'epe-utils)
 (require 'anything-config)
 
@@ -10,8 +7,9 @@
      '((name . ,title)
        (candidates . (lambda ()
 		       (let ((args
-			      (format "-H '%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -iregex '.*%s.*' -print"
+			      (format "-H '%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -%s '.*%s.*' -print"
 				      ,path
+                                      (if (all-lowercase-p anything-pattern) "iregex" "regex")
 				      anything-pattern)))
 			 (start-process-shell-command "file-search-process" nil
 						      "find" args))))
