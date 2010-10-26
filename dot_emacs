@@ -67,6 +67,7 @@
 (load "~/elisp/sizes.el")
 
 ; automatically set these modes based on filenames:
+(add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ftl$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tag$" . jsp-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . auto-fill-mode))
