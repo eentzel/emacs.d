@@ -4,6 +4,13 @@
       ; setting transient-mark-mode to 'lambda instead of t means it
       ; will be deactivated by the next set-mark-command
       (setq transient-mark-mode 'lambda))
-  (skip-syntax-backward "\w")
-  (mark-word))
+  (let* ((thing (if (eq last-command 'mark-whole-word)
+                    'filename
+                  'word))
+         (bounds (bounds-of-thing-at-point thing))
+         (p1 (car bounds))
+         (p2 (cdr bounds)))
+    (goto-char p1)
+    (push-mark p2)
+    (setq mark-active t)))
 (global-set-key (kbd "M-SPC") 'mark-whole-word)
