@@ -64,6 +64,8 @@
     (load "~/elisp/mark-whole-word.el"))
 (if (file-exists-p "~/elisp/find-file-in-home-dir.el")
       (load "~/elisp/find-file-in-home-dir"))
+(if (file-exists-p "~/elisp/pyflakes.el")
+      (load "~/elisp/pyflakes"))
 (load "~/elisp/sizes.el")
 
 ; automatically set these modes based on filenames:
