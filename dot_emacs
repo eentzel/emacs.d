@@ -72,6 +72,7 @@
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ftl$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tag$" . jsp-mode))
+(add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . auto-fill-mode))
 
 ; prefer UTF8 encoding when opening files
