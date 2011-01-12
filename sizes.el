@@ -1,6 +1,6 @@
 (setq sizes-alist '((232 . 62) (175 . 46))
       sizes-list-pos 0
-      positions-alist '((8 . 26) (75 . 26))
+      positions-alist '((8 . 26) (75 . 26) (-8 . 0))
       positions-list-pos 0)
 
 (defun next-size ()
