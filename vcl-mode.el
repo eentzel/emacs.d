@@ -50,8 +50,8 @@
 ;; Add a VCL major mode called "vcl-mode", based on generic-mode
 
 (define-generic-mode 'vcl-mode
-  ;; comments (defined in "vcl-mode-setup-function"
-  nil
+  ;; comments (others defined in "vcl-mode-setup-function"_
+  '("#")
   ;; keywords (defined under "others" instead)
   nil
   ;; others
@@ -159,10 +159,6 @@
   ;; C++-style comments
   (modify-syntax-entry ?/ ". 124")
   (modify-syntax-entry ?* ". 23b")
-
-  ;; Perl-style comments
-  (modify-syntax-entry ?# "<")
-  (modify-syntax-entry ?\n ">")
   
   (run-hooks 'vcl-mode-hook)
   (set (make-local-variable 'indent-line-function) 'vcl-indent-line)  
