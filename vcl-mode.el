@@ -154,7 +154,6 @@
 (defun vcl-mode-setup-function ()
   ;; These are "part of words"
   (modify-syntax-entry ?_ "w")
-  (modify-syntax-entry ?. "w")
 
   ;; C++-style comments
   (modify-syntax-entry ?/ ". 124")
