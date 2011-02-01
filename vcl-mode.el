@@ -139,7 +139,7 @@
     'font-lock-variable-name-face)
 
    ;; More variables
-   '("\\(\\(be\\)?req\\|resp\\|obj\\)\.http\.[A-Za-z-]+" .
+   '("\\(\\(be\\)?req\\|\\(be\\)?resp\\|obj\\)\.http\.[A-Za-z-]+" .
      font-lock-variable-name-face))
   
   ;; Filenames to highlight
