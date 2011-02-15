@@ -6,6 +6,7 @@
                         ("ed-core-web-4.1" . "ednl")
                         ("ed-core-web-3.0" . "ednl")
                         ("ed-core-web-3.3" . "eddk")
+                        ("ed-core" . "ednl")
                         ("ed-tas-core-web-2.1" . "edpl")
                         ("ds-core-web" . "ednl")
                         ("ds-core-web-4.4" . "ednl")))
