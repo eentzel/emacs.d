@@ -33,6 +33,15 @@
 (add-to-list 'load-path "~/elisp/egg")
 (require 'egg)
 
+; Scala mode
+(when (file-exists-p "~/elisp/scala-mode/")
+  (add-to-list 'load-path "~/elisp/scala-mode")
+  (require 'scala-mode-auto)
+  (yas/load-directory "~/elisp/scala-mode/contrib/yasnippet/snippets")
+  (add-hook 'scala-mode-hook
+            '(lambda ()
+               (yas/minor-mode-on))))
+
 ; vcl-mode for editing Varnish config files
 (require 'vcl-mode)
 
