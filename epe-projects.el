@@ -4,3 +4,8 @@
     (if (file-exists-p pomfile)
         (find-file pomfile)
       (message (concat "Project " project " doesn't appear to exist")))))
+
+(defun guess-lmi-project-parent (name)
+  (cond ((string-match "^ed-core" name) (replace-regexp-in-string "^ed-core" "ds-core" name))
+        ((string-match "^ed" name) "ed-core-web")
+        (t "")))
