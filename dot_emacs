@@ -125,6 +125,9 @@
 ; how hard is it to make emacsclient switch to the correct screen when invoked?
 (server-start)
 
+(fset 'format-cookie
+   [?\C-[ ?< ?\M-% ?\; ?  ?\C-m ?\C-q ?\C-j ?\C-m ?! ?\C-x ?h ?\M-x ?s ?o ?r ?t ?- ?l ?i ?n ?e ?s ?\C-m])
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
