@@ -2,6 +2,11 @@
 ; Emacs config file - get latest version from:
 ; $HeadURL$
 
+;; TODO: Better organization. Something like:
+;; http://www.enigmacurry.com/2009/01/19/my-emacs-config-on-github/
+;; or
+;; http://stackoverflow.com/questions/2079095/how-to-modularize-an-emacs-configuration
+
 (add-to-list 'load-path "~/elisp")
 
 ; can probably save this somewhere else since I don't use mutt anymore
