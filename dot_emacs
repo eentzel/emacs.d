@@ -68,6 +68,10 @@
 (if (file-exists-p "~/elisp/anything-epe.el")
     (load "~/elisp/anything-epe.el"))
 
+; much smarter than built-in auto-fill-mode:
+(when (file-exists-p "~/elisp/filladapt.el")
+  (require 'filladapt))
+
 ; load NXHTML
 ; (load "~/Downloads/nxhtml/autostart.el")
 
