@@ -2,6 +2,11 @@
 ; Emacs config file - get latest version from:
 ; $HeadURL$
 
+;; TODO: Better organization. Something like:
+;; http://www.enigmacurry.com/2009/01/19/my-emacs-config-on-github/
+;; or
+;; http://stackoverflow.com/questions/2079095/how-to-modularize-an-emacs-configuration
+
 (add-to-list 'load-path "~/elisp")
 
 ; can probably save this somewhere else since I don't use mutt anymore
@@ -33,6 +38,9 @@
 (add-to-list 'load-path "~/elisp/egg")
 (require 'egg)
 
+; vcl-mode for editing Varnish config files
+(require 'vcl-mode)
+
 ; load full-ack
 (autoload 'ack-same "full-ack" nil t)
 (autoload 'ack "full-ack" nil t)
@@ -47,9 +55,22 @@
 (if (file-exists-p "~/elisp/yasnippet-lm")
     (yas/load-directory "~/elisp/yasnippet-lm"))
 
+; Scala mode
+(when (file-exists-p "~/elisp/scala-mode/")
+  (add-to-list 'load-path "~/elisp/scala-mode")
+  (require 'scala-mode-auto)
+  (yas/load-directory "~/elisp/scala-mode/contrib/yasnippet/snippets")
+  (add-hook 'scala-mode-hook
+            '(lambda ()
+               (yas/minor-mode-on))))
+
 ;; load my custom anything config
 (if (file-exists-p "~/elisp/anything-epe.el")
     (load "~/elisp/anything-epe.el"))
+
+; much smarter than built-in auto-fill-mode:
+(when (file-exists-p "~/elisp/filladapt.el")
+  (require 'filladapt))
 
 ; load NXHTML
 ; (load "~/Downloads/nxhtml/autostart.el")
@@ -116,6 +137,9 @@
 ; how hard is it to make emacsclient switch to the correct screen when invoked?
 (server-start)
 
+(fset 'format-cookie
+   [?\C-[ ?< ?\M-% ?\; ?  ?\C-m ?\C-q ?\C-j ?\C-m ?! ?\C-x ?h ?\M-x ?s ?o ?r ?t ?- ?l ?i ?n ?e ?s ?\C-m])
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -138,6 +162,7 @@
  '(python-python-command "/usr/local/bin/python")
  '(sgml-basic-offset 4)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
+ '(vcl-indent-level 4)
  '(yas/prompt-functions (quote (yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
