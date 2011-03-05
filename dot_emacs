@@ -64,6 +64,11 @@
             '(lambda ()
                (yas/minor-mode-on))))
 
+; feature mode for Gherkin files:
+(add-to-list 'load-path "~/elisp/feature-mode")
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
 ;; load my custom anything config
 (if (file-exists-p "~/elisp/anything-epe.el")
     (load "~/elisp/anything-epe.el"))
