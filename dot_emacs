@@ -165,7 +165,7 @@
  '(mumamo-chunk-coloring (quote no-chunks-colored))
  '(nxml-child-indent 4)
  '(nxml-outline-child-indent 4)
- '(python-python-command "/usr/local/bin/python")
+ '(python-python-command "/usr/bin/env python")
  '(sgml-basic-offset 4)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(vcl-indent-level 4)
