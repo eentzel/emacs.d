@@ -31,6 +31,7 @@
               auto-mode-alist))
 
 ; show SVN status in modeline
+; TODO: vc-revert-buffer doesn't reset the stopsign icon
 (require 'psvn)
 (add-to-list 'vc-handled-backends 'SVN)
 
@@ -165,10 +166,11 @@
  '(mumamo-chunk-coloring (quote no-chunks-colored))
  '(nxml-child-indent 4)
  '(nxml-outline-child-indent 4)
- '(python-python-command "/usr/local/bin/python")
+ '(python-python-command "/usr/bin/env python")
  '(sgml-basic-offset 4)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(vcl-indent-level 4)
+ '(c-basic-offset 4)
  '(yas/prompt-functions (quote (yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
