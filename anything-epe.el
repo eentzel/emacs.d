@@ -35,11 +35,14 @@
 (global-set-key "\M-j" 'anything-other-project)
 
 (global-set-key "\C-j" 'anything)
-;; lisp-interaction-mode (e.g., the *scratch* buffer) has a useless
-;; local binding for C-j which global-set-key won't override, so also do:
-(define-key lisp-interaction-mode-map "\C-j" 'anything)
-; TODO: bind C-j in all modes that have a useless local binding for it
-; (define-key ruby-mode-map "\C-j" 'anything)
+
+;; some mode have a useless local binding for C-j which global-set-key
+;; won't override, so bind C-j explicitly in those modes:
+(mapc (lambda (modemap)
+        (when (boundp modemap)
+          (define-key (symbol-value modemap) "\C-j" 'anything)))
+      '(lisp-interaction-mode-map yaml-mode-map ruby-mode-map))
+
 (setq anything-sources '(anything-c-source-buffers+
                          anything-current-project-file-search
                          ;; anything-parent-project-file-search
