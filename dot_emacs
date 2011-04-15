@@ -103,6 +103,7 @@
 (add-to-list 'auto-mode-alist '("\\.php$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ftl$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tag$" . jsp-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
