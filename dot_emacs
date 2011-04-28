@@ -116,6 +116,9 @@
 ; don't put no tabs in my files!
 (setq-default indent-tabs-mode nil)
 
+; but if other people use them, render them 4 spaces wide
+(setq-default tab-width 4)
+
 ; turn off some annoying frills
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))  
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
