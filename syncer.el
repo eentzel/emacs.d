@@ -13,7 +13,7 @@
 
 (defun syncer ()
   "Call syncer to sync changes to Tomcat if appropriate."
-  (when buffer-file-name
+  (when nil
     (let (name target)
       (setq name (guess-lmi-project-name buffer-file-name))
       (unless (string= name "")
@@ -22,4 +22,4 @@
             (message (concat "Synced " name " -> " target " and " (current-message)))
           (message (concat (current-message) " - couldn't sync " name)))))))
 
-(add-hook 'after-save-hook 'syncer)
+;; (add-hook 'after-save-hook 'syncer)
