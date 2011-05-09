@@ -10,3 +10,6 @@
 [submodule "anything-config"]
 	path = anything-config
 	url = git://repo.or.cz/anything-config.git
+[submodule "yasnippet-jstl"]
+	path = yasnippet-jstl
+	url = git@github.com:eentzel/yasnippet-jstl.git
