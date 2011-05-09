@@ -123,6 +123,7 @@
 ; turn off some annoying frills
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))  
 ; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(setq ns-pop-up-frames nil)
 
 ; turn on some useful frills
 (fset 'yes-or-no-p 'y-or-n-p)
