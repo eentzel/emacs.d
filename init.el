@@ -11,6 +11,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/color-theme-sanityinc-solarized")
 (require 'color-theme-sanityinc-solarized)
+(color-theme-sanityinc-solarized-light)
 
 ; can probably save this somewhere else since I don't use mutt anymore
 (define-derived-mode mutt-mode text-mode "Mutt"
