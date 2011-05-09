@@ -7,3 +7,6 @@
 [submodule "egg"]
 	path = egg
 	url = https://github.com/bogolisk/egg.git
+[submodule "anything-config"]
+	path = anything-config
+	url = git://repo.or.cz/anything-config.git
