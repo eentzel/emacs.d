@@ -7,9 +7,9 @@
 ;; or
 ;; http://stackoverflow.com/questions/2079095/how-to-modularize-an-emacs-configuration
 
-(add-to-list 'load-path "~/elisp")
+(add-to-list 'load-path "~/.emacs.d")
 
-(add-to-list 'load-path "~/elisp/color-theme-sanityinc-solarized")
+(add-to-list 'load-path "~/.emacs.d/color-theme-sanityinc-solarized")
 (require 'color-theme-sanityinc-solarized)
 
 ; can probably save this somewhere else since I don't use mutt anymore
@@ -25,7 +25,7 @@
 (add-to-list 'auto-mode-alist '("\\.jsp$" . jsp-mode))
 
 ; Tuareg mode for OCaml
-(add-to-list 'load-path "~/elisp/tuareg-mode")
+(add-to-list 'load-path "~/.emacs.d/tuareg-mode")
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
 (setq auto-mode-alist 
@@ -39,7 +39,7 @@
 (add-to-list 'vc-handled-backends 'SVN)
 
 ; egg looks like a nice git mode
-(add-to-list 'load-path "~/elisp/egg")
+(add-to-list 'load-path "~/.emacs.d/egg")
 (require 'egg)
 
 ; vcl-mode for editing Varnish config files
@@ -50,53 +50,53 @@
 (autoload 'ack "full-ack" nil t)
 
 ; load yasnippet
-(add-to-list 'load-path "~/elisp/yasnippet-0.6.1c")
+(add-to-list 'load-path "~/.emacs.d/yasnippet-0.6.1c")
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
-(yas/load-directory "~/elisp/yasnippet-0.6.1c/snippets")
-(if (file-exists-p "~/elisp/yasnippet-jstl")
-    (yas/load-directory "~/elisp/yasnippet-jstl"))
-(if (file-exists-p "~/elisp/yasnippet-lm")
-    (yas/load-directory "~/elisp/yasnippet-lm"))
+(yas/load-directory "~/.emacs.d/yasnippet-0.6.1c/snippets")
+(if (file-exists-p "~/.emacs.d/yasnippet-jstl")
+    (yas/load-directory "~/.emacs.d/yasnippet-jstl"))
+(if (file-exists-p "~/.emacs.d/yasnippet-lm")
+    (yas/load-directory "~/.emacs.d/yasnippet-lm"))
 
 ; Scala mode
-(when (file-exists-p "~/elisp/scala-mode/")
-  (add-to-list 'load-path "~/elisp/scala-mode")
+(when (file-exists-p "~/.emacs.d/scala-mode/")
+  (add-to-list 'load-path "~/.emacs.d/scala-mode")
   (require 'scala-mode-auto)
-  (yas/load-directory "~/elisp/scala-mode/contrib/yasnippet/snippets")
+  (yas/load-directory "~/.emacs.d/scala-mode/contrib/yasnippet/snippets")
   (add-hook 'scala-mode-hook
             '(lambda ()
                (yas/minor-mode-on))))
 
 ; feature mode for Gherkin files:
-(add-to-list 'load-path "~/elisp/feature-mode")
+(add-to-list 'load-path "~/.emacs.d/feature-mode")
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;; load my custom anything config
-(if (file-exists-p "~/elisp/anything-epe.el")
-    (load "~/elisp/anything-epe.el"))
+(if (file-exists-p "~/.emacs.d/anything-epe.el")
+    (load "~/.emacs.d/anything-epe.el"))
 
 ; much smarter than built-in auto-fill-mode:
-(when (file-exists-p "~/elisp/filladapt.el")
+(when (file-exists-p "~/.emacs.d/filladapt.el")
   (require 'filladapt))
 
 ; load NXHTML
 ; (load "~/Downloads/nxhtml/autostart.el")
 
-(if (file-exists-p "~/elisp/js2-epe.el")
-    (load "~/elisp/js2-epe.el"))
-(if (file-exists-p "~/elisp/syncer.el")
-    (load "~/elisp/syncer.el"))
-(if (file-exists-p "~/elisp/ffap-epe.el")
-    (load "~/elisp/ffap-epe.el"))
-(if (file-exists-p "~/elisp/mark-whole-word.el")
-    (load "~/elisp/mark-whole-word.el"))
-(if (file-exists-p "~/elisp/find-file-in-home-dir.el")
-      (load "~/elisp/find-file-in-home-dir"))
-(if (file-exists-p "~/elisp/pyflakes.el")
-      (load "~/elisp/pyflakes"))
-(load "~/elisp/sizes.el")
+(if (file-exists-p "~/.emacs.d/js2-epe.el")
+    (load "~/.emacs.d/js2-epe.el"))
+(if (file-exists-p "~/.emacs.d/syncer.el")
+    (load "~/.emacs.d/syncer.el"))
+(if (file-exists-p "~/.emacs.d/ffap-epe.el")
+    (load "~/.emacs.d/ffap-epe.el"))
+(if (file-exists-p "~/.emacs.d/mark-whole-word.el")
+    (load "~/.emacs.d/mark-whole-word.el"))
+(if (file-exists-p "~/.emacs.d/find-file-in-home-dir.el")
+      (load "~/.emacs.d/find-file-in-home-dir"))
+(if (file-exists-p "~/.emacs.d/pyflakes.el")
+      (load "~/.emacs.d/pyflakes"))
+(load "~/.emacs.d/sizes.el")
 
 ; automatically set these modes based on filenames:
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
@@ -121,7 +121,7 @@
 
 ; turn off some annoying frills
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))  
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ; turn on some useful frills
 (fset 'yes-or-no-p 'y-or-n-p)
