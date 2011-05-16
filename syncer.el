@@ -13,13 +13,13 @@
 
 (defun syncer ()
   "Call syncer to sync changes to Tomcat if appropriate."
-  (when nil
-    (let (name target)
-      (setq name (guess-lmi-project-name buffer-file-name))
+  (when buffer-file-name
+    (let (src dest)
+      (setq src (guess-lmi-project-root buffer-file-name))
       (unless (string= name "")
-        (setq target (or (assoc-default name project-mapping) name))
-        (if (eq (call-process "syncer2" () "*syncer*" () target name) 0)
-            (message (concat "Synced " name " -> " target " and " (current-message)))
-          (message (concat (current-message) " - couldn't sync " name)))))))
+        (setq dest (concat (getenv "CATALINA_HOME") "/webapps/" (guess-lmi-project-name buffer-file-name)))
+        (if (eq (call-process "syncer" () "*syncer*" () src dest) 0)
+            (message (concat "Synced " src " to " dest " and " (current-message)))
+          (message (concat (current-message) " - couldn't sync " src " to " dest)))))))
 
-;; (add-hook 'after-save-hook 'syncer)
+(add-hook 'after-save-hook 'syncer)
