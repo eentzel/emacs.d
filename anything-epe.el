@@ -43,8 +43,7 @@
 (mapc (lambda (modehook)
         (add-hook modehook
                   '(lambda () (local-set-key "\C-j" 'anything))))
-      '(lisp-interaction-mode-hook ruby-mode-hook))
-;; TODO: also need one for yaml mode
+      '(lisp-interaction-mode-hook ruby-mode-hook yaml-mode-hook))
 
 (setq anything-sources '(anything-c-source-buffers+
                          anything-current-project-file-search
