@@ -43,6 +43,10 @@
 (add-to-list 'load-path "~/.emacs.d/egg")
 (require 'egg)
 
+; yaml-mode
+(add-to-list 'load-path "~/.emacs.d/yaml-mode")
+(require 'yaml-mode)
+
 ; vcl-mode for editing Varnish config files
 (require 'vcl-mode)
 

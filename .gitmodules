@@ -13,3 +13,6 @@
 [submodule "yasnippet-jstl"]
 	path = yasnippet-jstl
 	url = git@github.com:eentzel/yasnippet-jstl.git
+[submodule "yaml-mode"]
+	path = yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
