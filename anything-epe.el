@@ -34,16 +34,17 @@
   (interactive "sProject name: ")
   (setq other-project project)
   (anything 'anything-other-project-file-search))
-(global-set-key "\M-j" 'anything-other-project)
 
+(global-set-key "\M-j" 'anything-other-project)
 (global-set-key "\C-j" 'anything)
 
 ;; some mode have a useless local binding for C-j which global-set-key
 ;; won't override, so bind C-j explicitly in those modes:
-(mapc (lambda (modemap)
-        (when (boundp modemap)
-          (define-key (symbol-value modemap) "\C-j" 'anything)))
-      '(lisp-interaction-mode-map yaml-mode-map ruby-mode-map))
+(mapc (lambda (modehook)
+        (add-hook modehook
+                  '(lambda () (local-set-key "\C-j" 'anything))))
+      '(lisp-interaction-mode-hook ruby-mode-hook))
+;; TODO: also need one for yaml mode
 
 (setq anything-sources '(anything-c-source-buffers+
                          anything-current-project-file-search
