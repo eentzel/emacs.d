@@ -150,7 +150,6 @@
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-ck" 'ack)
 (global-set-key "\C-c\C-k" 'ack-same)
-(global-set-key "\M-`" 'ns-next-frame)
 
 ; Turns out C-Backspace in Windows does a backward-kill-word.  Is
 ; there any way to rebind it in emacs for consistency?  e.g.:
@@ -178,7 +177,7 @@
  '(js2-mode-escape-quotes nil)
  '(mumamo-chunk-coloring (quote no-chunks-colored))
  '(ns-alternate-modifier (quote meta))
- '(ns-command-modifier (quote meta))
+ '(ns-command-modifier (quote super))
  '(nxml-child-indent 4)
  '(nxml-outline-child-indent 4)
  '(python-python-command "/usr/bin/env python")
