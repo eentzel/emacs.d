@@ -182,6 +182,8 @@
  '(nxml-child-indent 4)
  '(nxml-outline-child-indent 4)
  '(python-python-command "/usr/bin/env python")
+ '(ruby-deep-arglist nil)
+ '(ruby-deep-indent-paren nil)
  '(sgml-basic-offset 4)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(vcl-indent-level 4)
