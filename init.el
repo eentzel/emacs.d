@@ -51,6 +51,7 @@
 (require 'vcl-mode)
 
 ; load full-ack
+(add-to-list 'load-path "~/.emacs.d/full-ack")
 (autoload 'ack-same "full-ack" nil t)
 (autoload 'ack "full-ack" nil t)
 

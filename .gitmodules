@@ -16,3 +16,6 @@
 [submodule "yaml-mode"]
 	path = yaml-mode
 	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "full-ack"]
+	path = full-ack
+	url = https://github.com/nschum/full-ack.git
