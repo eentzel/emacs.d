@@ -91,8 +91,6 @@
 
 (if (file-exists-p "~/.emacs.d/js2-epe.el")
     (load "~/.emacs.d/js2-epe.el"))
-(if (file-exists-p "~/.emacs.d/syncer.el")
-    (load "~/.emacs.d/syncer.el"))
 (if (file-exists-p "~/.emacs.d/ffap-epe.el")
     (load "~/.emacs.d/ffap-epe.el"))
 (if (file-exists-p "~/.emacs.d/mark-whole-word.el")
