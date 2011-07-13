@@ -34,6 +34,9 @@
                 ("\\.topml$" . tuareg-mode))
               auto-mode-alist))
 
+; Groovy mode
+(load "~/.emacs.d/groovy-mode-epe.el")
+
 ; show SVN status in modeline
 ; TODO: vc-revert-buffer doesn't reset the stopsign icon
 (require 'psvn)
