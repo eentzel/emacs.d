@@ -38,3 +38,4 @@
   (set (make-local-variable 'indent-line-function) 'my-js2-indent-function))
 
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
+(load "~/.emacs.d/jslint-epe.el")
