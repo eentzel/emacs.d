@@ -152,6 +152,7 @@
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-ck" 'ack)
 (global-set-key "\C-c\C-k" 'ack-same)
+(global-set-key "\C-c|" 'shell-command-on-buffer-file)
 
 ; Turns out C-Backspace in Windows does a backward-kill-word.  Is
 ; there any way to rebind it in emacs for consistency?  e.g.:
