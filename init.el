@@ -186,6 +186,7 @@
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil)
  '(sgml-basic-offset 4)
+ '(temporary-file-directory "/tmp")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(vcl-indent-level 4)
  '(yas/prompt-functions (quote (yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))))
