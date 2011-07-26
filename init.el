@@ -106,7 +106,7 @@
 (load "~/.emacs.d/sizes.el")
 
 ; automatically set these modes based on filenames:
-(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.php$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
