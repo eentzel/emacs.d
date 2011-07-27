@@ -8,13 +8,17 @@
   `(defvar ,name
      '((name . ,title)
        (candidates . (lambda ()
-		       (let ((args
-			      (format "-H '%s' \\( -path \\*/target \\) -prune -o \\( -path \\*/.svn \\) -prune -o -%s '.*%s.*' -print"
-				      ,path
-                                      (if (all-lowercase-p anything-pattern) "iregex" "regex")
-				      anything-pattern)))
-			 (start-process-shell-command "file-search-process" nil
-						      "find" args))))
+                       (let* ((excludes
+                               (mapconcat 'identity '("*/classes" "*/target" "*/.svn" "*/reaDS" "*/casaDS")
+                                          " \\) -prune -o \\( -path \\"))
+                              (args
+                               (format "-H '%s' \\( -path %s \\) -prune -o -%s '.*%s.*' -print"
+                                       ,path
+                                       excludes
+                                       (if (all-lowercase-p anything-pattern) "iregex" "regex")
+                                       anything-pattern)))
+                         (start-process-shell-command "file-search-process" nil
+                                                      "find" args))))
        (type . file)
        (requires-pattern . 4)
        (delayed))
