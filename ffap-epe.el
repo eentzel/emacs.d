@@ -1,6 +1,6 @@
 (require 'ffap)
 (defun ffap-lmi-jsp (file)
- (concat (guess-lmi-project-root buffer-file-name) "/src/main/webapp" file))
+ (concat (guess-project-root buffer-file-name) "/src/main/webapp" file))
 (add-to-list 'ffap-alist '("WEB-INF" . ffap-lmi-jsp))
 (add-to-list 'ffap-alist '("/js" . ffap-lmi-jsp))
 (add-to-list 'ffap-alist '("/css" . ffap-lmi-jsp))

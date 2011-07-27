@@ -22,7 +22,7 @@
 
 (create-anything-source
  anything-current-project-file-search
- (guess-lmi-project-root anything-buffer-file-name)
+ (guess-project-root anything-buffer-file-name)
  "Current Project Search")
 
 (create-anything-source
