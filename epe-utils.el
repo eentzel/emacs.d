@@ -13,7 +13,7 @@
          (result))
     (dolist (candidate project-root-files result)
       (if (file-exists-p (concat dir candidate))
-          (setq result dir)))
+          (setq result (directory-file-name dir))))
     (cond (result)
           ((string= dir "/") origpath)
           (t (guess-project-root (directory-file-name dir) origpath)))))
