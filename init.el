@@ -167,6 +167,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(ack-arguments (quote ("--color-lineno=bold yellow" "--color-filename=bold green")))
  '(ack-project-root-file-patterns (quote (".project\\'" ".xcodeproj\\'" ".sln\\'" "\\`Project.ede\\'" "\\`.git\\'" "\\`.bzr\\'" "\\`_darcs\\'" "\\`.hg\\'" "pom.xml")))
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(c-basic-offset 4)
