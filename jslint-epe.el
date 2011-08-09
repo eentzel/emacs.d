@@ -10,7 +10,7 @@
   (lambda ()
     (set (make-local-variable 'compilation-read-command) nil)
     (set (make-local-variable 'compile-command)
-     (concat jslint-wrapper buffer-file-name))
+         (concat jslint-wrapper buffer-file-name))
     (local-set-key (kbd "C-x c") 'compile)))
 
 (defun notify-compilation-result(buffer msg)
