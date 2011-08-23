@@ -20,6 +20,7 @@
   (auto-fill-mode 1))
 (add-to-list 'auto-mode-alist '("mutt" . mutt-mode))
 
+;; TODO: define jsp-mode comment syntax
 (define-derived-mode jsp-mode html-mode "JSP"
   "Major mode for editing .jsp files - identical to html-mode, but
   allows some mode hooks to run for jsp-mode but not html-mode")
@@ -59,6 +60,7 @@
 (autoload 'ack "full-ack" nil t)
 
 ; load yasnippet
+;; TODO: HTML5 tags
 (add-to-list 'load-path "~/.emacs.d/yasnippet-0.6.1c")
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
