@@ -20,11 +20,7 @@
   (auto-fill-mode 1))
 (add-to-list 'auto-mode-alist '("mutt" . mutt-mode))
 
-;; TODO: define jsp-mode comment syntax
-(define-derived-mode jsp-mode html-mode "JSP"
-  "Major mode for editing .jsp files - identical to html-mode, but
-  allows some mode hooks to run for jsp-mode but not html-mode")
-(add-to-list 'auto-mode-alist '("\\.jsp$" . jsp-mode))
+(require 'jsp-mode)
 
 ; Tuareg mode for OCaml
 (add-to-list 'load-path "~/.emacs.d/tuareg-mode")
@@ -115,7 +111,6 @@
 (add-to-list 'auto-mode-alist '("Vagrantfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ftl$" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.tag$" . jsp-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . auto-fill-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
