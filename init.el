@@ -124,6 +124,12 @@
 ; but if other people use them, render them 4 spaces wide
 (setq-default tab-width 4)
 
+;; Our Java properties files tend to use ' as an apostrophe rather
+;; than a quote, so define it as a word character so syntax
+;; highlighting doesn't get confused:
+(add-hook 'conf-javaprop-mode-hook (lambda ()
+                                     (modify-syntax-entry ?' "w")))
+
 ; turn off some annoying frills
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))  
 ; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
