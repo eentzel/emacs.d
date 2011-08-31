@@ -26,7 +26,7 @@
 (add-to-list 'load-path "~/.emacs.d/tuareg-mode")
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
-(setq auto-mode-alist 
+(setq auto-mode-alist
       (append '(("\\.ml[ily]?$" . tuareg-mode)
                 ("\\.topml$" . tuareg-mode))
               auto-mode-alist))
@@ -132,7 +132,7 @@
                                      (modify-syntax-entry ?' "w")))
 
 ; turn off some annoying frills
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))  
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 ; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (setq ns-pop-up-frames nil)
 
@@ -143,10 +143,10 @@
 (put 'set-goal-column 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (setq-default comment-style 'multi-line)
-;(iswitchb-mode 1)                       ; don't need this now that we have anything.el
-;(setq iswitchb-buffer-ignore '("^ " "^\\*[^s]"))
 (setq initial-frame-alist '((top . 26) (left . 8) (width . 100) (height . 44)))
-;(delete-selection-mode 1)
+(require 'whitespace)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-set-key "\C-cw" 'whitespace-mode)
 
 ; bind some useful keys
 (global-set-key "\M-s" 'isearch-forward-regexp)
@@ -171,14 +171,28 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(ack-arguments (quote ("--color-lineno=bold yellow" "--color-filename=bold green" "--ignore-dir=classes")))
- '(ack-project-root-file-patterns (quote (".project\\'" ".xcodeproj\\'" ".sln\\'" "\\`Project.ede\\'" "\\`.git\\'" "\\`.bzr\\'" "\\`_darcs\\'" "\\`.hg\\'" "pom.xml")))
+ '(ack-arguments (quote ("--color-lineno=bold yellow"
+                         "--color-filename=bold green" "--ignore-dir=classes")))
+ '(ack-project-root-file-patterns (quote (".project\\'" ".xcodeproj\\'"
+                                          ".sln\\'" "\\`Project.ede\\'"
+                                          "\\`.git\\'" "\\`.bzr\\'"
+                                          "\\`_darcs\\'" "\\`.hg\\'"
+                                          "pom.xml")))
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(c-basic-offset 4)
  '(desktop-save-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
- '(exec-path (quote ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin" "~/bin" "/usr/local/bin")))
- '(hippie-expand-try-functions-list (quote (try-complete-file-name-partially try-complete-file-name try-expand-all-abbrevs try-expand-dabbrev try-expand-list try-expand-line try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol)))
+ '(exec-path (quote ("/usr/bin" "/bin" "/usr/sbin" "/sbin"
+                     "/Applications/Emacs.app/Contents/MacOS/bin" "~/bin"
+                     "/usr/local/bin")))
+ '(hippie-expand-try-functions-list '(try-complete-file-name-partially
+                                      try-complete-file-name
+                                      try-expand-all-abbrevs try-expand-dabbrev
+                                      try-expand-list try-expand-line
+                                      try-expand-dabbrev-all-buffers
+                                      try-expand-dabbrev-from-kill
+                                      try-complete-lisp-symbol-partially
+                                      try-complete-lisp-symbol))
  '(ispell-program-name "aspell")
  '(js2-auto-indent-flag nil)
  '(js2-basic-offset 4)
@@ -196,7 +210,8 @@
  '(temporary-file-directory "/tmp")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(vcl-indent-level 4)
- '(yas/prompt-functions (quote (yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))))
+ '(yas/prompt-functions '(yas/dropdown-prompt yas/x-prompt yas/completing-prompt
+                                              yas/ido-prompt yas/no-prompt)))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
