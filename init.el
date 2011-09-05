@@ -101,7 +101,6 @@
       (load "~/.emacs.d/find-file-in-home-dir"))
 (if (file-exists-p "~/.emacs.d/pyflakes.el")
       (load "~/.emacs.d/pyflakes"))
-(load "~/.emacs.d/sizes.el")
 (load "~/.emacs.d/scratch.el")
 
 ; automatically set these modes based on filenames:
