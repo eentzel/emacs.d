@@ -31,11 +31,13 @@
 
 (create-anything-source
  anything-other-project-file-search
- (concat (getenv "WORKSPACE") "/" other-project)
+ other-project
  "Other Project Search")
 
 (defun anything-other-project (project)
-  (interactive "sProject name: ")
+  (interactive (list (expand-file-name
+                      (read-directory-name "Project name: "
+                                           (concat (getenv "WORKSPACE") "/")))))
   (setq other-project project)
   (anything 'anything-other-project-file-search))
 
