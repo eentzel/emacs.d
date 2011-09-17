@@ -102,6 +102,7 @@
 (if (file-exists-p "~/.emacs.d/pyflakes.el")
       (load "~/.emacs.d/pyflakes"))
 (load "~/.emacs.d/scratch.el")
+(load-file "~/.emacs.d/graphviz-dot-mode.el")
 
 ; automatically set these modes based on filenames:
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
