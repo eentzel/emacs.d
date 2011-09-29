@@ -19,3 +19,6 @@
 [submodule "full-ack"]
 	path = full-ack
 	url = https://github.com/eentzel/full-ack.git
+[submodule "tuareg-mode"]
+	path = tuareg-mode
+	url = https://github.com/afeinberg/tuareg-mode
