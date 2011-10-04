@@ -4,7 +4,8 @@
 (require 'anything-config)
 
 (defmacro create-anything-source (name path title)
-  "Define an anything source called name that searches recursively for matching files in path"
+  "Define an anything source called NAME that searches
+recursively for matching files in PATH."
   `(defvar ,name
      '((name . ,title)
        (candidates . (lambda ()
