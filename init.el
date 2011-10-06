@@ -171,28 +171,14 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(ack-arguments (quote ("--color-lineno=bold yellow"
-                         "--color-filename=bold green" "--ignore-dir=classes")))
- '(ack-project-root-file-patterns (quote (".project\\'" ".xcodeproj\\'"
-                                          ".sln\\'" "\\`Project.ede\\'"
-                                          "\\`.git\\'" "\\`.bzr\\'"
-                                          "\\`_darcs\\'" "\\`.hg\\'"
-                                          "pom.xml")))
+ '(ack-arguments (quote ("--color-lineno=bold yellow" "--color-filename=bold green" "--ignore-dir=classes")))
+ '(ack-project-root-file-patterns (quote (".project\\'" ".xcodeproj\\'" ".sln\\'" "\\`Project.ede\\'" "\\`.git\\'" "\\`.bzr\\'" "\\`_darcs\\'" "\\`.hg\\'" "pom.xml")))
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(c-basic-offset 4)
  '(desktop-save-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
- '(exec-path (quote ("/usr/bin" "/bin" "/usr/sbin" "/sbin"
-                     "/Applications/Emacs.app/Contents/MacOS/bin" "~/bin"
-                     "/usr/local/bin")))
- '(hippie-expand-try-functions-list '(try-complete-file-name-partially
-                                      try-complete-file-name
-                                      try-expand-all-abbrevs try-expand-dabbrev
-                                      try-expand-list try-expand-line
-                                      try-expand-dabbrev-all-buffers
-                                      try-expand-dabbrev-from-kill
-                                      try-complete-lisp-symbol-partially
-                                      try-complete-lisp-symbol))
+ '(exec-path (quote ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin" "~/bin" "/usr/local/bin")))
+ '(hippie-expand-try-functions-list (quote (try-complete-file-name-partially try-complete-file-name try-expand-all-abbrevs try-expand-dabbrev try-expand-list try-expand-line try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol)))
  '(ispell-program-name "aspell")
  '(js2-auto-indent-flag nil)
  '(js2-basic-offset 4)
@@ -210,8 +196,8 @@
  '(temporary-file-directory "/tmp")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(vcl-indent-level 4)
- '(yas/prompt-functions '(yas/dropdown-prompt yas/x-prompt yas/completing-prompt
-                                              yas/ido-prompt yas/no-prompt)))
+ '(whitespace-line-column 160)
+ '(yas/prompt-functions (quote (yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
