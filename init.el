@@ -55,6 +55,12 @@
 (autoload 'ack-same "full-ack" nil t)
 (autoload 'ack "full-ack" nil t)
 
+;; fill-column-indicator
+(add-to-list 'load-path "~/.emacs.d/Fill-Column-Indicator")
+(require 'fill-column-indicator)
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode 1)
+
 ; load yasnippet
 ;; TODO: HTML5 tags
 (add-to-list 'load-path "~/.emacs.d/yasnippet-0.6.1c")
@@ -147,8 +153,8 @@
 (setq-default comment-style 'multi-line)
 (setq initial-frame-alist '((top . 26) (left . 8) (width . 100) (height . 44)))
 (require 'whitespace)
-(setq whitespace-style '(face empty tabs lines-tail trailing))
-(global-set-key "\C-cw" 'whitespace-mode)
+(setq whitespace-style '(face empty tabs trailing))
+(global-whitespace-mode t)
 
 ; bind some useful keys
 (global-set-key "\M-s" 'isearch-forward-regexp)
@@ -180,6 +186,7 @@
  '(desktop-save-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(exec-path (quote ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin" "~/bin" "/usr/local/bin")))
+ '(fill-column 160)
  '(hippie-expand-try-functions-list (quote (try-complete-file-name-partially try-complete-file-name try-expand-all-abbrevs try-expand-dabbrev try-expand-list try-expand-line try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol)))
  '(ispell-program-name "aspell")
  '(js2-auto-indent-flag nil)

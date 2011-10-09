@@ -22,3 +22,6 @@
 [submodule "tuareg-mode"]
 	path = tuareg-mode
 	url = https://github.com/afeinberg/tuareg-mode
+[submodule "Fill-Column-Indicator"]
+	path = Fill-Column-Indicator
+	url = https://github.com/alpaker/Fill-Column-Indicator.git
