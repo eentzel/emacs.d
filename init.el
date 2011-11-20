@@ -116,6 +116,7 @@
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . auto-fill-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
 ; prefer UTF8 encoding when opening files
 (prefer-coding-system 'mule-utf-8)
