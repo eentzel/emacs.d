@@ -10,7 +10,7 @@ recursively for matching files in PATH."
      '((name . ,title)
        (candidates . (lambda ()
                        (let* ((excludes
-                               (mapconcat 'identity '("*/classes" "*/target" "*/.svn" "*/reaDS" "*/casaDS")
+                               (mapconcat 'identity '("*/classes" "*/target" "*/.svn" "*/reaDS" "*/casaDS" "*/build")
                                           " \\) -prune -o \\( -path \\"))
                               (args
                                (format "-H '%s' \\( -path %s \\) -prune -o -%s '.*%s.*' -print"
