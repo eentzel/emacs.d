@@ -151,7 +151,6 @@
 (put 'set-goal-column 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (setq-default comment-style 'multi-line)
-(setq initial-frame-alist '((top . 26) (left . 8) (width . 100) (height . 44)))
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs trailing))
 (global-whitespace-mode t)
