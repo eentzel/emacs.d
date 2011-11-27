@@ -36,8 +36,8 @@
 
 ; show SVN status in modeline
 ; TODO: vc-revert-buffer doesn't reset the stopsign icon
-(require 'psvn)
-(add-to-list 'vc-handled-backends 'SVN)
+;; (require 'psvn)
+;; (add-to-list 'vc-handled-backends 'SVN)
 
 ; egg looks like a nice git mode
 (add-to-list 'load-path "~/.emacs.d/egg")
