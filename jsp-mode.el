@@ -19,3 +19,19 @@
 (add-to-list 'auto-mode-alist '("\\.tag$" . jsp-mode))
 
 (provide 'jsp-mode)
+
+
+
+;; Two useful functions (that depend on the jsptree command and graphviz and X11)
+
+(defun jsp-parents ()
+  "Use the jsptree tool to show parents of the current buffer's file"
+  (interactive)
+  (when buffer-file-name
+    (save-window-excursion (shell-command (concat "~/bin/jsptree parents " buffer-file-name " | /usr/local/bin/dot -Tpng | /usr/local/bin/display &") nil))))
+
+(defun jsp-children ()
+  "Use the jsptree tool to show children of the current buffer's file"
+  (interactive)
+  (when buffer-file-name
+    (save-window-excursion (shell-command (concat "~/bin/jsptree children " buffer-file-name " | /usr/local/bin/dot -Tpng | /usr/local/bin/display &") nil))))
