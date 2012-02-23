@@ -198,6 +198,7 @@
  '(nxml-child-indent 4)
  '(nxml-outline-child-indent 4)
  '(python-python-command "/usr/bin/env python")
+ '(python-remove-cwd-from-path nil)
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil)
  '(sgml-basic-offset 4)
