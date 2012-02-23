@@ -25,3 +25,6 @@
 [submodule "Fill-Column-Indicator"]
 	path = Fill-Column-Indicator
 	url = https://github.com/alpaker/Fill-Column-Indicator.git
+[submodule "expand-region.el"]
+	path = expand-region.el
+	url = https://github.com/magnars/expand-region.el.git

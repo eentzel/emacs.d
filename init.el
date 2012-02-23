@@ -55,6 +55,11 @@
 (autoload 'ack-same "full-ack" nil t)
 (autoload 'ack "full-ack" nil t)
 
+;; expand-region.el
+(add-to-list 'load-path "~/.emacs.d/expand-region.el")
+(require 'expand-region)
+(global-set-key (kbd "M-SPC") 'er/expand-region)
+
 ;; fill-column-indicator
 (add-to-list 'load-path "~/.emacs.d/Fill-Column-Indicator")
 (require 'fill-column-indicator)
@@ -101,8 +106,6 @@
     (load "~/.emacs.d/js2-epe.el"))
 (if (file-exists-p "~/.emacs.d/ffap-epe.el")
     (load "~/.emacs.d/ffap-epe.el"))
-(if (file-exists-p "~/.emacs.d/mark-whole-word.el")
-    (load "~/.emacs.d/mark-whole-word.el"))
 (if (file-exists-p "~/.emacs.d/find-file-in-home-dir.el")
       (load "~/.emacs.d/find-file-in-home-dir"))
 (if (file-exists-p "~/.emacs.d/pyflakes.el")
