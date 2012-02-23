@@ -28,3 +28,9 @@
 [submodule "expand-region.el"]
 	path = expand-region.el
 	url = https://github.com/magnars/expand-region.el.git
+[submodule "mark-multiple.el"]
+	path = mark-multiple.el
+	url = https://github.com/magnars/mark-multiple.el.git
+[submodule "js2-refactor.el"]
+	path = js2-refactor.el
+	url = https://github.com/magnars/js2-refactor.el.git
