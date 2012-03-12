@@ -158,6 +158,7 @@
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs trailing))
 (global-whitespace-mode t)
+(show-paren-mode t)
 
 ; bind some useful keys
 (global-set-key "\M-s" 'isearch-forward-regexp)
