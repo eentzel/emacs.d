@@ -86,6 +86,11 @@
             '(lambda ()
                (yas/minor-mode-on))))
 
+;; Go lang mode
+(when (file-exists-p "/usr/local/go/misc/emacs/go-mode-load.el")
+  (add-to-list 'load-path "/usr/local/go/misc/emacs/" t)
+  (require 'go-mode-load))
+
 ; feature mode for Gherkin files:
 (add-to-list 'load-path "~/.emacs.d/feature-mode")
 (require 'feature-mode)
