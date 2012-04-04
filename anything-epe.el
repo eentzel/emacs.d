@@ -42,19 +42,8 @@ recursively for matching files in PATH."
   (setq other-project project)
   (anything 'anything-other-project-file-search))
 
-(global-set-key "\M-j" 'anything-other-project)
-(global-set-key "\C-j" 'anything)
-
-;; some mode have a useless local binding for C-j which global-set-key
-;; won't override, so bind C-j explicitly in those modes:
-(mapc (lambda (modehook)
-        (add-hook modehook
-                  '(lambda () (local-set-key "\C-j" 'anything))))
-      '(lisp-interaction-mode-hook
-        ruby-mode-hook
-        yaml-mode-hook
-        octave-mode-hook
-        tuareg-interactive-mode-hook))
+(global-set-key "\C-cJ" 'anything-other-project)
+(global-set-key "\C-cj" 'anything)
 
 (setq anything-sources '(anything-c-source-buffers+
                          anything-current-project-file-search
