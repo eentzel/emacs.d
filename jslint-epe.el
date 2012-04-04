@@ -4,7 +4,7 @@
 ;;     - "C-x `" binding is shadowed by js2-next-error
 
 ;;; C-x c calls jslint and outputs to the *compilation* buffer.
-(setq jslint-wrapper "java -jar ~/3rdparty/jslint4java/jslint4java-1.4.6.jar")
+(setq jslint-wrapper "java -jar ~/3rdparty/jslint4java/jslint4java-1.4.6.jar --maxlen 160")
 (require 'compile)
 (add-hook 'js2-mode-hook
   (lambda ()
