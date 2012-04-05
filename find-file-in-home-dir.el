@@ -4,4 +4,4 @@
   (let ((default-directory "~/"))
     (call-interactively 'find-file)))
 
-(global-set-key "\C-x\C-f" 'find-file-in-home-dir)
+(define-key (current-global-map) [remap find-file] 'find-file-in-home-dir)
