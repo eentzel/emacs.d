@@ -22,16 +22,20 @@
 
 
 
-;; Two useful functions (that depend on the jsptree command and graphviz and X11)
+;; Two useful functions (that depend on the jsptree command and graphviz and OSX's 'open' command)
 
 (defun jsp-parents ()
   "Use the jsptree tool to show parents of the current buffer's file"
   (interactive)
   (when buffer-file-name
-    (save-window-excursion (shell-command (concat "~/bin/jsptree parents " buffer-file-name " | /usr/local/bin/dot -Tpng | /usr/local/bin/display &") nil))))
+    (let ((tmp (concat (file-name-as-directory temporary-file-directory) "parents-of-" (file-name-nondirectory buffer-file-name) ".png")))
+      (save-window-excursion (async-shell-command
+                              (concat "~/bin/jsptree parents " buffer-file-name " | /usr/local/bin/dot -Tpng > " tmp " && open " tmp) nil)))))
 
 (defun jsp-children ()
   "Use the jsptree tool to show children of the current buffer's file"
   (interactive)
   (when buffer-file-name
-    (save-window-excursion (shell-command (concat "~/bin/jsptree children " buffer-file-name " | /usr/local/bin/dot -Tpng | /usr/local/bin/display &") nil))))
+    (let ((tmp (concat (file-name-as-directory temporary-file-directory) "children-of-" (file-name-nondirectory buffer-file-name) ".png")))
+      (save-window-excursion (async-shell-command
+                              (concat "~/bin/jsptree children " buffer-file-name " | /usr/local/bin/dot -Tpng > " tmp " && open " tmp) nil)))))
