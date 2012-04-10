@@ -1,53 +1,43 @@
 (add-to-list 'load-path "~/.emacs.d/anything-config")
 
-(require 'epe-utils)
 (require 'anything-config)
+(require 'magit)
 
-(defmacro create-anything-source (name path title)
-  "Define an anything source called NAME that searches
-recursively for matching files in PATH."
-  `(defvar ,name
-     '((name . ,title)
-       (candidates . (lambda ()
-                       (let* ((excludes
-                               (mapconcat 'identity '("*/classes" "*/target" "*/.svn" "*/reaDS" "*/casaDS" "*/build")
-                                          " \\) -prune -o \\( -path \\"))
-                              (args
-                               (format "-H '%s' \\( -path %s \\) -prune -o -%s '.*%s.*' -print"
-                                       ,path
-                                       excludes
-                                       (if (all-lowercase-p anything-pattern) "iregex" "regex")
-                                       anything-pattern)))
-                         (start-process-shell-command "file-search-process" nil
-                                                      "find" args))))
-       (type . file)
-       (requires-pattern . 4)
-       (delayed))
-     (concat "Source for searching matching files in " ,path " recursively.")))
 
-(create-anything-source
- anything-current-project-file-search
- (guess-project-root anything-buffer-file-name)
- "Current Project Search")
+;; from http://mikerowecode.com/2012/03/anything-find-files-in-git-project.html
+(defvar anything-c-source-git-project-files-cache nil "(path signature cached-buffer)")
+(defvar anything-c-source-git-project-files
+  '((name . "Files from current project")
+    (init . (lambda ()
+              (let* ((top-dir (file-truename (magit-get-top-dir (if (buffer-file-name)
+                                                                    (file-name-directory (buffer-file-name))
+                                                                  default-directory))))
+                     (default-directory top-dir)
+                     (signature (magit-rev-parse "HEAD")))
 
-(create-anything-source
- anything-other-project-file-search
- other-project
- "Other Project Search")
+                (unless (and anything-c-source-git-project-files-cache
+                             (third anything-c-source-git-project-files-cache)
+                             (equal (first anything-c-source-git-project-files-cache) top-dir)
+                             (equal (second anything-c-source-git-project-files-cache) signature))
+                  (if (third anything-c-source-git-project-files-cache)
+                      (kill-buffer (third anything-c-source-git-project-files-cache)))
+                  (setq anything-c-source-git-project-files-cache
+                        (list top-dir
+                              signature
+                              (anything-candidate-buffer 'global)))
+                  (with-current-buffer (third anything-c-source-git-project-files-cache)
+                    (dolist (filename (mapcar (lambda (file) (concat default-directory file))
+                                              (magit-git-lines "ls-files")))
+                      (insert filename)
+                      (newline))))
+                (anything-candidate-buffer (third anything-c-source-git-project-files-cache)))))
 
-(defun anything-other-project (project)
-  (interactive (list (expand-file-name
-                      (read-directory-name "Project name: "
-                                           (concat (getenv "WORKSPACE") "/")))))
-  (setq other-project project)
-  (anything 'anything-other-project-file-search))
+    (type . file)
+    (candidates-in-buffer)))
 
-(global-set-key "\C-cJ" 'anything-other-project)
 (global-set-key "\C-cj" 'anything)
 
 (setq anything-sources '(anything-c-source-buffers+
-                         anything-current-project-file-search
-                         ;; anything-parent-project-file-search
                          anything-c-source-recentf
-                         anything-c-source-org-headline
+                         anything-c-source-git-project-files
                          anything-c-source-buffer-not-found))
