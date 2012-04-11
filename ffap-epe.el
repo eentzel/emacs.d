@@ -1,4 +1,6 @@
 (require 'ffap)
+(require 'epe-utils)
+
 (defun ffap-lmi-jsp (file)
   (concat (guess-project-root buffer-file-name) "/src/main/webapp" file))
 (add-to-list 'ffap-alist '("WEB-INF" . ffap-lmi-jsp))
