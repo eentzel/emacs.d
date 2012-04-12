@@ -68,14 +68,10 @@
 
 ; load yasnippet
 ;; TODO: HTML5 tags
-(add-to-list 'load-path "~/.emacs.d/yasnippet-0.6.1c")
-(require 'yasnippet) ;; not yasnippet-bundle
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/yasnippet-0.6.1c/snippets")
-(if (file-exists-p "~/.emacs.d/yasnippet-jstl")
-    (yas/load-directory "~/.emacs.d/yasnippet-jstl"))
-(if (file-exists-p "~/.emacs.d/yasnippet-lm")
-    (yas/load-directory "~/.emacs.d/yasnippet-lm"))
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(add-to-list 'yas/snippet-dirs "~/.emacs.d/yasnippet-jstl")
+(yas/global-mode 1)
 
 ; Scala mode
 (when (file-exists-p "~/.emacs.d/scala-mode/")
@@ -194,8 +190,8 @@
  '(c-basic-offset 4)
  '(desktop-save-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
- '(fill-column 160)
  '(exec-path (quote ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin" "~/bin" "/usr/local/bin" "/opt/local/bin")))
+ '(fill-column 160)
  '(hippie-expand-try-functions-list (quote (try-complete-file-name-partially try-complete-file-name try-expand-all-abbrevs try-expand-dabbrev try-expand-list try-expand-line try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol)))
  '(ispell-program-name "aspell")
  '(js2-auto-indent-flag nil)
@@ -215,8 +211,7 @@
  '(temporary-file-directory "/tmp")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(vcl-indent-level 4)
- '(whitespace-line-column 160)
- '(yas/prompt-functions (quote (yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))))
+ '(whitespace-line-column 160))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

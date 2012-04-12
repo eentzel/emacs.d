@@ -34,3 +34,6 @@
 [submodule "js2-refactor.el"]
 	path = js2-refactor.el
 	url = https://github.com/magnars/js2-refactor.el.git
+[submodule "yasnippet"]
+	path = yasnippet
+	url = https://github.com/capitaomorte/yasnippet
