@@ -53,6 +53,10 @@
 (require 'haml-mode)
 (require 'sass-mode-epe)
 
+;; AD2 js
+(if (file-exists-p "~/.emacs.d/ad2-js-hack.el")
+    (load "~/.emacs.d/ad2-js-hack.el"))
+
 ; vcl-mode for editing Varnish config files
 (require 'vcl-mode)
 
