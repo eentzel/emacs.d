@@ -47,8 +47,9 @@
 (add-to-list 'load-path "~/.emacs.d/yaml-mode")
 (require 'yaml-mode)
 
-;; haml-mode
+;; HAML and SASS
 (require 'haml-mode)
+(require 'sass-mode-epe)
 
 ; vcl-mode for editing Varnish config files
 (require 'vcl-mode)
