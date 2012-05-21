@@ -24,7 +24,7 @@ project-root-files."
   "Run COMMAND on the current buffer's file (if any)."
   (interactive "sCommand: ")
   (when buffer-file-name
-    (shell-command (concat command " " buffer-file-name))))
+    (shell-command (concat command " " (shell-quote-argument buffer-file-name)))))
 
 (defun all-lowercase-p (str)
   "Return true iff STR contains only lowercase characters."
