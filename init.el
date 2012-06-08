@@ -7,6 +7,8 @@
 ;; or
 ;; http://stackoverflow.com/questions/2079095/how-to-modularize-an-emacs-configuration
 
+;; TODO: fix colors in iTerm2: http://stackoverflow.com/questions/7464217/weird-emacs-colors-with-solarized-iterm2
+
 (add-to-list 'load-path "~/.emacs.d")
 
 (add-to-list 'load-path "~/.emacs.d/color-theme-sanityinc-solarized")
