@@ -128,6 +128,8 @@
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rep$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ftl$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . auto-fill-mode))
