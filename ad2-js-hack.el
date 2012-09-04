@@ -2,7 +2,7 @@
 
 (defun is-cp-js (path)
   (let ((project-name (file-name-nondirectory (guess-project-root path))))
-    (string-equal project-name "cp-agentadmin")))
+    (member-ignore-case project-name '("cp-agentadmin" "new-homes"))))
 
 (add-hook 'js2-mode-hook
   (lambda ()

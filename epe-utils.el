@@ -1,7 +1,7 @@
 (provide 'epe-utils)
 
 (defvar project-root-files
-  '("build.gradle" "Rakefile" "Gemfile" "Makefile" "pom.xml")
+  '("build.gradle" "Rakefile" "Gemfile" "Makefile" "pom.xml" ".git")
   "List of filenames that appear at project root.")
 
 (defun guess-project-root (path &optional origpath)
