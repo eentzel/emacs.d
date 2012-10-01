@@ -224,8 +224,7 @@
  '(sgml-basic-offset 4)
  '(temporary-file-directory "/tmp")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
- '(vcl-indent-level 4)
- '(whitespace-line-column 160))
+ '(vcl-indent-level 4))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
