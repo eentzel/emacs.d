@@ -9,3 +9,18 @@
 (require 'js2-refactor)
 
 (load "~/.emacs.d/jslint-epe.el")
+
+
+;; from http://emacswiki.org/emacs/Js2Mode
+;; Don't highlight global vars that are declared in a JSLint-style /*global */ block
+(add-hook 'js2-post-parse-callbacks
+          (lambda ()
+            (when (> (buffer-size) 0)
+              (let ((btext (replace-regexp-in-string
+                            ": *true" " "
+                            (replace-regexp-in-string "[\n\t ]+" " " (buffer-substring-no-properties 1 (buffer-size)) t t))))
+                (mapc (apply-partially 'add-to-list 'js2-additional-externs)
+                      (split-string
+                       (if (string-match "/\\* *global *\\(.*?\\) *\\*/" btext) (match-string-no-properties 1 btext) "")
+                       " *, *" t))
+                ))))
