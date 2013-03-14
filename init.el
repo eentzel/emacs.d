@@ -95,9 +95,16 @@
                (yas/minor-mode-on))))
 
 ;; Go lang mode
-(when (file-exists-p "/usr/local/go/misc/emacs/go-mode-load.el")
-  (add-to-list 'load-path "/usr/local/go/misc/emacs/" t)
-  (require 'go-mode-load))
+;; http://dominik.honnef.co/posts/2013/03/writing_go_in_emacs/
+
+;; "From within Emacs, run M-x update-file-autoloads, point it at the
+;; go-mode.el file and tell it to generate a go-mode-load.el file"
+
+(when (file-exists-p "~/.emacs.d/go-mode.el/go-mode-load.el")
+  (add-to-list 'load-path "~/.emacs.d/go-mode.el" t)
+  (require 'go-mode-load)
+   (add-hook 'before-save-hook #'gofmt-before-save)
+  )
 
 ; feature mode for Gherkin files:
 (add-to-list 'load-path "~/.emacs.d/feature-mode")
