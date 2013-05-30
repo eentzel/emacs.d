@@ -72,6 +72,9 @@
 (require 'expand-region)
 (global-set-key (kbd "M-SPC") 'er/expand-region)
 
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings 'meta))
+
 ;; fill-column-indicator
 (add-to-list 'load-path "~/.emacs.d/Fill-Column-Indicator")
 (require 'fill-column-indicator)
