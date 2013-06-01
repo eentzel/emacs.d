@@ -10,13 +10,11 @@ Flavored Markdown and displays the results in a web browser"
         (url-request-method        "POST")
         (url-request-extra-headers `(("Content-Type" . "text/x-markdown")))
         (url-request-data          (buffer-string)))
-
     (url-retrieve endpoint (lambda (status)
                              (delete-http-headers)
                              (save-excursion
                                (goto-char 0)
                                (insert (gh-stylesheet-link)))
-
                              (browse-url-of-buffer nil)))))
 
 
