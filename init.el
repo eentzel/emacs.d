@@ -206,6 +206,15 @@
 ; how hard is it to make emacsclient switch to the correct screen when invoked?
 (server-start)
 
+;; Fix path, which tends not to get set in OSX
+;; From http://blog.gaz-jones.com/2012/02/01/setting_up_emacs_for_clojure_development.html
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (shell-command-to-string "$SHELL -i -c 'echo $PATH'")))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+(if window-system (set-exec-path-from-shell-PATH))
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -217,7 +226,6 @@
  '(c-basic-offset 4)
  '(desktop-save-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
- '(exec-path (quote ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin" "~/bin" "/usr/local/bin" "/opt/local/bin")))
  '(fill-column 160)
  '(hippie-expand-try-functions-list (quote (try-complete-file-name-partially try-complete-file-name try-expand-all-abbrevs try-expand-dabbrev try-expand-list try-expand-line try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol)))
  '(ispell-program-name "aspell")
