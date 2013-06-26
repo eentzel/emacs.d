@@ -107,6 +107,9 @@
   (add-to-list 'load-path "/usr/local/go/misc/emacs/" t)
   (require 'go-mode-load)
    (add-hook 'before-save-hook #'gofmt-before-save)
+   (add-hook 'go-mode-hook
+             (lambda ()
+               (set (make-local-variable 'whitespace-style) (remq 'tabs whitespace-style))))
   )
 
 ; feature mode for Gherkin files:
