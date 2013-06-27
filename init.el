@@ -84,21 +84,10 @@
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
 
-; load yasnippet
-;; TODO: HTML5 tags
-(add-to-list 'load-path "~/.emacs.d/yasnippet")
-(require 'yasnippet)
-(add-to-list 'yas/snippet-dirs "~/.emacs.d/yasnippet-jstl")
-(yas/global-mode 1)
-
 ; Scala mode
 (when (file-exists-p "~/.emacs.d/scala-mode/")
   (add-to-list 'load-path "~/.emacs.d/scala-mode")
-  (require 'scala-mode-auto)
-  (yas/load-directory "~/.emacs.d/scala-mode/contrib/yasnippet/snippets")
-  (add-hook 'scala-mode-hook
-            '(lambda ()
-               (yas/minor-mode-on))))
+  (require 'scala-mode-auto))
 
 ;; Go lang mode
 ;; http://dominik.honnef.co/posts/2013/03/writing_go_in_emacs/
