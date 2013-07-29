@@ -9,6 +9,17 @@
 
 ;; TODO: fix colors in iTerm2: http://stackoverflow.com/questions/7464217/weird-emacs-colors-with-solarized-iterm2
 
+;; not happy with filladapt at the moment:
+;; http://www.emacswiki.org/FillAdapt
+;; http://www.gnu.org/software/emacs/NEWS.24.2
+;; http://www.wonderworks.com/download/filladapt.el
+
+;; TODO whitespace issues?
+;; http://stackoverflow.com/questions/7349487/emacs-different-tab-indent-settings-in-different-modes
+
+;; TODO: byte compile?
+;; http://stackoverflow.com/questions/1217180/how-do-i-byte-compile-everything-in-my-emacs-d-directory
+
 (add-to-list 'load-path "~/.emacs.d")
 
 (add-to-list 'load-path "~/.emacs.d/color-theme-sanityinc-solarized")

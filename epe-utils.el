@@ -4,6 +4,7 @@
   '("build.gradle" "Rakefile" "Gemfile" "Makefile" "pom.xml" ".git")
   "List of filenames that appear at project root.")
 
+;; TODO: this is suspiciously similar to locate-dominating-file
 (defun guess-project-root (path &optional origpath)
   "Given a PATH, attempt to guess the project directory.
 
