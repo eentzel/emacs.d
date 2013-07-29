@@ -115,6 +115,14 @@
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
+;; package sources
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
+
 ;; load my custom anything config
 (if (file-exists-p "~/.emacs.d/anything-epe.el")
     (load "~/.emacs.d/anything-epe.el"))
