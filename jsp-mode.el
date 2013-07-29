@@ -27,15 +27,19 @@
 (defun jsp-parents ()
   "Use the jsptree tool to show parents of the current buffer's file"
   (interactive)
-  (when buffer-file-name
-    (let ((tmp (make-temp-file (concat "parents-of-" (file-name-nondirectory buffer-file-name)) nil ".png")))
-      (save-window-excursion (async-shell-command
-                              (concat "~/bin/jsptree parents " buffer-file-name " | /usr/local/bin/dot -Tpng > " tmp " && open " tmp) nil)))))
+  (jsptree-command "parents"))
 
 (defun jsp-children ()
   "Use the jsptree tool to show children of the current buffer's file"
   (interactive)
+  (jsptree-command "children"))
+
+(defun jsptree-command (name)
   (when buffer-file-name
-    (let ((tmp (make-temp-file (concat "children-of-" (file-name-nondirectory buffer-file-name)) nil ".png")))
-      (save-window-excursion (async-shell-command
-                              (concat "~/bin/jsptree children " buffer-file-name " | /usr/local/bin/dot -Tpng > " tmp " && open " tmp) nil)))))
+    (let* ((prefix (concat name "-of-" (file-name-nondirectory buffer-file-name)))
+          (tmp (make-temp-file prefix nil ".png"))
+          (command (concat "jsptree " name " " buffer-file-name))
+          (filter (concat "dot -Tpng > " tmp " && open " tmp)))
+      (save-window-excursion
+        (async-shell-command
+         (concat command " | " filter) nil)))))
