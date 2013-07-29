@@ -63,10 +63,6 @@
 ;; (require 'psvn)
 ;; (add-to-list 'vc-handled-backends 'SVN)
 
-; egg looks like a nice git mode
-(add-to-list 'load-path "~/.emacs.d/egg")
-(require 'egg)
-
 ; yaml-mode
 (add-to-list 'load-path "~/.emacs.d/yaml-mode")
 (require 'yaml-mode)
