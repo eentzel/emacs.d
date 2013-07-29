@@ -129,7 +129,8 @@
 
 ; much smarter than built-in auto-fill-mode:
 (when (file-exists-p "~/.emacs.d/filladapt.el")
-  (require 'filladapt))
+  (require 'filladapt)
+  (setq-default filladapt-mode t))
 
 ; load NXHTML
 ; (load "~/Downloads/nxhtml/autostart.el")
@@ -157,7 +158,6 @@
 (add-to-list 'auto-mode-alist '("\\.rep$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ftl$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
-(add-to-list 'auto-mode-alist '("\\.txt$" . auto-fill-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
