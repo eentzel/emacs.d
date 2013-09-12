@@ -35,12 +35,6 @@
   (auto-fill-mode 1))
 (add-to-list 'auto-mode-alist '("mutt" . mutt-mode))
 
-(define-derived-mode git-message-mode text-mode "Git commit message"
-  "Major mode for editing Git commit messages"
-  (set-fill-column 72)
-  (auto-fill-mode 1))
-(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . git-message-mode))
-
 (require 'jsp-mode)
 
 ; Tuareg mode for OCaml
