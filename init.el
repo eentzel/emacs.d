@@ -145,6 +145,7 @@
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.php$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.gsp$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
