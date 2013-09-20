@@ -1,3 +1,7 @@
 auto-save-list
 tramp
 *.elc
+.emacs.desktop
+.emacs.desktop.lock
+elpa/
+url/
