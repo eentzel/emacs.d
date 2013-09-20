@@ -139,6 +139,7 @@
       (load "~/.emacs.d/pyflakes"))
 (load "~/.emacs.d/scratch.el")
 (load "~/.emacs.d/comment-line.el")
+(load "~/.emacs.d/hexify.el")
 (load-file "~/.emacs.d/graphviz-dot-mode.el")
 
 ; automatically set these modes based on filenames:
