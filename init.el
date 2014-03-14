@@ -225,6 +225,7 @@
  '(ack-project-root-file-patterns (quote (".project\\'" ".xcodeproj\\'" ".sln\\'" "\\`Project.ede\\'" "\\`.git\\'" "\\`.bzr\\'" "\\`_darcs\\'" "\\`.hg\\'" "pom.xml")))
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(c-basic-offset 4)
+ '(cider-repl-history-file "~/.emacs.d/.cider-history")
  '(desktop-save-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(fill-column 78)
