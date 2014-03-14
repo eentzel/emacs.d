@@ -2,6 +2,11 @@
 ;; API docs: http://developer.github.com/v3/markdown/
 ;; elisp http: http://www.emacswiki.org/emacs/HttpPost
 
+;; also check out other people's implementations:
+;;   - http://stackoverflow.com/questions/7694887/is-there-a-command-line-utility-for-rendering-github-flavored-markdown
+;;   - http://brizzled.clapper.org/blog/2010/11/26/writing-markdown-and-pandoc/
+;; pandoc seems the The Right Way to do this - would need a CSS file though
+
 (defun md-preview ()
   "Uses the GitHub API to render the current buffer as GitHub
 Flavored Markdown and displays the results in a web browser"

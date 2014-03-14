@@ -3,6 +3,8 @@
 (require 'anything-config)
 (require 'magit)
 
+;; TODO update to use the new version, helm:
+;; https://github.com/emacs-helm/helm
 
 ;; from http://mikerowecode.com/2012/03/anything-find-files-in-git-project.html
 (defvar anything-c-source-git-project-files-cache nil "(path signature cached-buffer)")
