@@ -84,8 +84,8 @@
 ;; fill-column-indicator
 (add-to-list 'load-path "~/.emacs.d/Fill-Column-Indicator")
 (require 'fill-column-indicator)
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-(global-fci-mode 1)
+(require 'epe-utils)
+(global-minor-mode-with-blacklist 'fci-mode '(org-mode))
 
 ; Scala mode
 (when (file-exists-p "~/.emacs.d/scala-mode/")

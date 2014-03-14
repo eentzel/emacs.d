@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 (provide 'epe-utils)
 
 (defvar project-root-files
@@ -30,3 +32,12 @@ project-root-files."
 (defun all-lowercase-p (str)
   "Return true iff STR contains only lowercase characters."
   (string-equal (downcase str) str))
+
+(defun global-minor-mode-with-blacklist
+  (mm blacklist)
+  "Arrange for minor mode MM to be turned on in all buffers,
+except those in BLACKLIST"
+  (add-hook 'find-file-hook
+            (lambda ()
+              (when (not (member major-mode blacklist))
+                (funcall mm)))))
