@@ -4,6 +4,7 @@
 
 (require 'autoloads)
 (require 'keybinds)
+(require 'preferences)
 
 (server-start)
 
