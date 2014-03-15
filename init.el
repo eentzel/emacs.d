@@ -4,6 +4,7 @@
 
 (require 'autoloads)
 (require 'fixpath)
+(require 'hexify)
 (require 'keybinds)
 (require 'preferences)
 
