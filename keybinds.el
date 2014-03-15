@@ -7,5 +7,8 @@
                            (load-theme 'sanityinc-solarized-light)))
 
 (global-set-key (kbd "M-SPC") 'er/expand-region)
+(global-set-key "\C-cf" 'ffap)
+(global-set-key "\C-m" 'newline-and-indent)
+(global-set-key "\M-p" 'pwd)
 
 (provide 'keybinds)
