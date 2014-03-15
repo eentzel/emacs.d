@@ -3,6 +3,7 @@
 (require 'packages)
 
 (require 'autoloads)
+(require 'fixpath)
 (require 'keybinds)
 (require 'preferences)
 
