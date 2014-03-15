@@ -5,6 +5,7 @@
 (require 'autoloads)
 (require 'fixpath)
 (require 'hexify)
+(require 'jsp-mode)
 (require 'keybinds)
 (require 'preferences)
 
