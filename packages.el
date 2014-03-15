@@ -6,8 +6,8 @@
 (package-initialize)
 
 (defvar my-packages
-  '(cider coffee-mode fill-column-indicator groovy-mode js2-mode
-    magit scala-mode2 tuareg))
+  '(cider coffee-mode fill-column-indicator full-ack groovy-mode
+    js2-mode magit scala-mode2 tuareg))
 
 (defun ensure-installed (package)
   (unless (package-installed-p package)
