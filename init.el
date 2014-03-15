@@ -8,6 +8,7 @@
 (require 'jsp-mode)
 (require 'keybinds)
 (require 'preferences)
+(require 'scratch)
 
 (server-start)
 
