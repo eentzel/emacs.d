@@ -41,3 +41,9 @@ except those in BLACKLIST"
             (lambda ()
               (when (not (member major-mode blacklist))
                 (funcall mm)))))
+
+(defun popshell ()
+  (interactive)
+  (split-window-sensibly)
+  (other-window 1)
+  (shell))
