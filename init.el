@@ -189,6 +189,7 @@
 (setq whitespace-style '(face empty tabs trailing))
 (global-whitespace-mode t)
 (show-paren-mode t)
+(setq org-todo-keywords '((sequence "TODO" "PR" "DONE")))
 
 ; bind some useful keys
 (global-set-key "\M-s" 'isearch-forward-regexp)
