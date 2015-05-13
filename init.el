@@ -49,8 +49,9 @@
 ; Groovy mode
 (load "~/.emacs.d/groovy-mode-epe.el")
 
-; Preview for Gihub-flavored Markdown
+; GitHub fanciness
 (load "~/.emacs.d/md-preview.el")
+(load "~/.emacs.d/epe-github.el")
 
 ; show SVN status in modeline
 ; TODO: vc-revert-buffer doesn't reset the stopsign icon

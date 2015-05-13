@@ -47,3 +47,7 @@ except those in BLACKLIST"
   (split-window-sensibly)
   (other-window 1)
   (shell))
+
+(defun sheval (cmd)
+  "Return the (trimmed) stdout of running CMD in a shell"
+  (replace-regexp-in-string "\n\\'" "" (shell-command-to-string cmd)))
