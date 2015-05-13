@@ -195,7 +195,6 @@
 ; bind some useful keys
 (global-set-key "\M-s" 'isearch-forward-regexp)
 (global-set-key "\M-r" 'isearch-backward-regexp)
-(global-set-key "\M-p" 'pwd)
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-ck" 'ack)
 (global-set-key "\C-cK" 'ack-same)
