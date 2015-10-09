@@ -8,7 +8,7 @@
 (assert (string= "65656E747A656C" (hexify "eentzel")))
 
 (defun hexify-region ()
-  "In transient-mark-mode, put the hexadecimal represntation of
+  "In transient-mark-mode, put the hexadecimal representation of
 region on the kill ring, prefixed with 0x"
   (interactive)
   (when transient-mark-mode
