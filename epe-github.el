@@ -1,6 +1,7 @@
 (require 'epe-utils)
 
 (defun gh-proj-url (origin)
+  (assert (string-match-p "github" origin))
   (if (string-match-p "^http" origin)
       (replace-regexp-in-string ".git$" "" origin)
     (gh-proj-url (replace-regexp-in-string "^git@github.com:" "https://github.com/" origin))))
