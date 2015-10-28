@@ -53,6 +53,9 @@
 (load "~/.emacs.d/md-preview.el")
 (load "~/.emacs.d/epe-github.el")
 
+; window management fanciness
+(load "~/.emacs.d/epe-windows.el")
+
 ; show SVN status in modeline
 ; TODO: vc-revert-buffer doesn't reset the stopsign icon
 ;; (require 'psvn)
