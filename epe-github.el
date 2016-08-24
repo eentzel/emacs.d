@@ -2,9 +2,9 @@
 
 (defun gh-proj-url (origin)
   (assert (string-match-p "github" origin))
-  (if (string-match-p "^http" origin)
-      (replace-regexp-in-string ".git$" "" origin)
-    (gh-proj-url (replace-regexp-in-string "^git@github.com:" "https://github.com/" origin))))
+  (replace-regexp-in-string
+   ".git$" ""
+   (replace-regexp-in-string "^git@github.com:" "https://github.com/" origin)))
 
 (assert (string= "https://github.com/fullcontact/fullcontact-api-ruby"
                  (gh-proj-url "https://github.com/fullcontact/fullcontact-api-ruby.git")))
