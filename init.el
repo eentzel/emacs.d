@@ -20,6 +20,9 @@
 ;; TODO: byte compile?
 ;; http://stackoverflow.com/questions/1217180/how-do-i-byte-compile-everything-in-my-emacs-d-directory
 
+;; Good resource on autoload, eval-after-load, profiling, etc.
+;; http://a-nickels-worth.blogspot.ro/2007/11/effective-emacs.html
+
 (add-to-list 'load-path "~/.emacs.d")
 
 (add-to-list 'load-path "~/.emacs.d/color-theme-sanityinc-solarized")
