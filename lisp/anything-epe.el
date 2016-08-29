@@ -11,7 +11,7 @@
 (defvar anything-c-source-git-project-files
   '((name . "Files from current project")
     (init . (lambda ()
-              (let* ((top-dir (file-truename (magit-get-top-dir (if (buffer-file-name)
+              (let* ((top-dir (file-truename (magit-toplevel (if (buffer-file-name)
                                                                     (file-name-directory (buffer-file-name))
                                                                   default-directory))))
                      (default-directory top-dir)
