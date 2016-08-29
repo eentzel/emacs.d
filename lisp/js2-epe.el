@@ -8,7 +8,7 @@
 (add-to-list 'load-path "~/.emacs.d/js2-refactor.el")
 (require 'js2-refactor)
 
-(load "~/.emacs.d/jslint-epe.el")
+(load "~/.emacs.d/lisp/jslint-epe.el")
 
 
 ;; from http://emacswiki.org/emacs/Js2Mode
