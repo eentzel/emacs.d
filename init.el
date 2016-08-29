@@ -23,7 +23,7 @@
 ;; Good resource on autoload, eval-after-load, profiling, etc.
 ;; http://a-nickels-worth.blogspot.ro/2007/11/effective-emacs.html
 
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 (add-to-list 'load-path "~/.emacs.d/color-theme-sanityinc-solarized")
 (require 'color-theme-sanityinc-solarized)
@@ -50,14 +50,14 @@
               auto-mode-alist))
 
 ; Groovy mode
-(load "~/.emacs.d/groovy-mode-epe.el")
+(load "~/.emacs.d/lisp/groovy-mode-epe.el")
 
 ; GitHub fanciness
-(load "~/.emacs.d/md-preview.el")
-(load "~/.emacs.d/epe-github.el")
+(load "~/.emacs.d/lisp/md-preview.el")
+(load "~/.emacs.d/lisp/epe-github.el")
 
 ; window management fanciness
-(load "~/.emacs.d/epe-windows.el")
+(load "~/.emacs.d/lisp/epe-windows.el")
 
 ; show SVN status in modeline
 ; TODO: vc-revert-buffer doesn't reset the stopsign icon
@@ -125,29 +125,29 @@
 (package-initialize)
 
 ;; load my custom anything config
-(if (file-exists-p "~/.emacs.d/anything-epe.el")
-    (load "~/.emacs.d/anything-epe.el"))
+(if (file-exists-p "~/.emacs.d/lisp/anything-epe.el")
+    (load "~/.emacs.d/lisp/anything-epe.el"))
 
 ; much smarter than built-in auto-fill-mode:
-(when (file-exists-p "~/.emacs.d/filladapt.el")
+(when (file-exists-p "~/.emacs.d/lisp/filladapt.el")
   (require 'filladapt)
   (setq-default filladapt-mode t))
 
 ; load NXHTML
 ; (load "~/Downloads/nxhtml/autostart.el")
 
-(if (file-exists-p "~/.emacs.d/js2-epe.el")
-    (load "~/.emacs.d/js2-epe.el"))
-(if (file-exists-p "~/.emacs.d/ffap-epe.el")
-    (load "~/.emacs.d/ffap-epe.el"))
-(if (file-exists-p "~/.emacs.d/find-file-in-home-dir.el")
-      (load "~/.emacs.d/find-file-in-home-dir"))
-(if (file-exists-p "~/.emacs.d/pyflakes.el")
-      (load "~/.emacs.d/pyflakes"))
-(load "~/.emacs.d/scratch.el")
-(load "~/.emacs.d/comment-line.el")
-(load "~/.emacs.d/hexify.el")
-(load-file "~/.emacs.d/graphviz-dot-mode.el")
+(if (file-exists-p "~/.emacs.d/lisp/js2-epe.el")
+    (load "~/.emacs.d/lisp/js2-epe.el"))
+(if (file-exists-p "~/.emacs.d/lisp/ffap-epe.el")
+    (load "~/.emacs.d/lisp/ffap-epe.el"))
+(if (file-exists-p "~/.emacs.d/lisp/find-file-in-home-dir.el")
+      (load "~/.emacs.d/lisp/find-file-in-home-dir"))
+(if (file-exists-p "~/.emacs.d/lisp/pyflakes.el")
+      (load "~/.emacs.d/lisp/pyflakes"))
+(load "~/.emacs.d/lisp/scratch.el")
+(load "~/.emacs.d/lisp/comment-line.el")
+(load "~/.emacs.d/lisp/hexify.el")
+(load-file "~/.emacs.d/lisp/graphviz-dot-mode.el")
 
 ; automatically set these modes based on filenames:
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
