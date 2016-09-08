@@ -248,9 +248,9 @@
  '(ns-command-modifier (quote super))
  '(nxml-child-indent 4)
  '(nxml-outline-child-indent 4)
- '(org-agenda-files
-   (quote
-    ("~/Dropbox/fullcontact.org" "~/Dropbox/enrichment.org")))
+ '(org-agenda-files (quote ("~/Dropbox/org/")))
+ '(org-refile-targets (quote ((org-agenda-files :tag . ""))))
+ '(org-refile-use-outline-path (quote file))
  '(python-python-command "/usr/bin/env python")
  '(python-remove-cwd-from-path nil)
  '(ruby-deep-arglist nil)
