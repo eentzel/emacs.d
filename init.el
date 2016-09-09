@@ -205,6 +205,7 @@
 (global-set-key "\C-ck" 'ack)
 (global-set-key "\C-cK" 'ack-same)
 (global-set-key "\C-c|" 'shell-command-on-buffer-file)
+(global-set-key "\C-ca" 'org-agenda)
 
 ; Turns out C-Backspace in Windows does a backward-kill-word.  Is
 ; there any way to rebind it in emacs for consistency?  e.g.:
