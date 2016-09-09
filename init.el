@@ -250,7 +250,7 @@
  '(nxml-child-indent 4)
  '(nxml-outline-child-indent 4)
  '(org-agenda-files (quote ("~/Dropbox/org/")))
- '(org-refile-targets (quote ((org-agenda-files :tag . ""))))
+ '(org-refile-targets (quote ((org-agenda-files :level . 1))))
  '(org-refile-use-outline-path (quote file))
  '(python-python-command "/usr/bin/env python")
  '(python-remove-cwd-from-path nil)
