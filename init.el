@@ -59,6 +59,9 @@
 ; window management fanciness
 (load "~/.emacs.d/lisp/epe-windows.el")
 
+; restclient fanciness
+(load "~/.emacs.d/lisp/epe-restclient.el")
+
 ; show SVN status in modeline
 ; TODO: vc-revert-buffer doesn't reset the stopsign icon
 ;; (require 'psvn)
