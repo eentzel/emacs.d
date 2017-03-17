@@ -260,6 +260,9 @@
  '(org-log-into-drawer t)
  '(org-refile-targets (quote ((org-agenda-files :maxlevel . 2))))
  '(org-refile-use-outline-path (quote file))
+ '(package-selected-packages
+   (quote
+    (solarized-theme helm-projectile helm groovy-mode restclient magit js2-mode)))
  '(python-python-command "/usr/bin/env python")
  '(python-remove-cwd-from-path nil)
  '(ruby-deep-arglist nil)
