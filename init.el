@@ -252,6 +252,7 @@
  '(ns-command-modifier (quote super))
  '(nxml-child-indent 4)
  '(nxml-outline-child-indent 4)
+ '(org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 2 :narrow 80)))
  '(org-agenda-files (quote ("~/Dropbox/org/")))
  '(org-refile-targets (quote ((org-agenda-files :level . 1))))
  '(org-refile-use-outline-path (quote file))
