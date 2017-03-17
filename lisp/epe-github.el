@@ -1,4 +1,5 @@
 (require 'epe-utils)
+(require 'cl)
 
 (defun gh-proj-url (origin)
   (assert (string-match-p "github" origin))
