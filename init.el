@@ -265,6 +265,7 @@
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil)
  '(sgml-basic-offset 4)
+ '(solarized-scale-org-headlines nil)
  '(temporary-file-directory "/tmp")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(vcl-indent-level 4))
