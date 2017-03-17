@@ -1,9 +1,6 @@
 [submodule "feature-mode"]
 	path = feature-mode
 	url = https://github.com/michaelklishin/cucumber.el.git
-[submodule "color-theme-sanityinc-solarized"]
-	path = color-theme-sanityinc-solarized
-	url = https://github.com/purcell/color-theme-sanityinc-solarized.git
 [submodule "egg"]
 	path = egg
 	url = https://github.com/bogolisk/egg.git

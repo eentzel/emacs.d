@@ -25,11 +25,9 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-(add-to-list 'load-path "~/.emacs.d/color-theme-sanityinc-solarized")
-(require 'color-theme-sanityinc-solarized)
-(color-theme-sanityinc-solarized-light)
-(global-set-key "\C-ccd" 'color-theme-sanityinc-solarized-dark)
-(global-set-key "\C-ccl" 'color-theme-sanityinc-solarized-light)
+(add-hook 'after-init-hook (lambda () (load-theme 'solarized-dark)))
+(global-set-key "\C-ccd" (lambda () (interactive) (load-theme 'solarized-dark)))
+(global-set-key "\C-ccl" (lambda () (interactive) (load-theme 'solarized-light)))
 
 ; can probably save this somewhere else since I don't use mutt anymore
 (define-derived-mode mutt-mode text-mode "Mutt"
@@ -241,6 +239,9 @@
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(c-basic-offset 4)
  '(cider-repl-history-file "~/.emacs.d/.cider-history")
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(desktop-save-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(fill-column 78)
