@@ -125,9 +125,8 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
-;; load my custom anything config
-(if (file-exists-p "~/.emacs.d/lisp/anything-epe.el")
-    (load "~/.emacs.d/lisp/anything-epe.el"))
+(if (file-exists-p "~/.emacs.d/lisp/helm-epe.el")
+    (load "~/.emacs.d/lisp/helm-epe.el"))
 
 ; much smarter than built-in auto-fill-mode:
 (when (file-exists-p "~/.emacs.d/lisp/filladapt.el")
