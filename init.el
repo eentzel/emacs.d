@@ -261,7 +261,7 @@
  '(org-refile-use-outline-path (quote file))
  '(package-selected-packages
    (quote
-    (haskell-mode solarized-theme helm-projectile helm groovy-mode restclient magit js2-mode)))
+    (editorconfig haskell-mode ensime restclient-helm solarized-theme helm-projectile helm groovy-mode restclient magit js2-mode)))
  '(python-python-command "/usr/bin/env python")
  '(python-remove-cwd-from-path nil)
  '(ruby-deep-arglist nil)
