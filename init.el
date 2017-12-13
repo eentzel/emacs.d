@@ -234,7 +234,7 @@
     ("--color-lineno=bold yellow" "--color-filename=bold green" "--ignore-dir=classes" "--ignore-dir=build")))
  '(ack-project-root-file-patterns
    (quote
-    (".project\\'" ".xcodeproj\\'" ".sln\\'" "\\`Project.ede\\'" "\\`.git\\'" "\\`.bzr\\'" "\\`_darcs\\'" "\\`.hg\\'" "pom.xml")))
+    (".project\\'" ".xcodeproj\\'" ".sln\\'" "\\`Project.ede\\'" "\\`.git\\'" "\\`.bzr\\'" "\\`_darcs\\'" "\\`.hg\\'")))
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(c-basic-offset 4)
  '(cider-repl-history-file "~/.emacs.d/.cider-history")
