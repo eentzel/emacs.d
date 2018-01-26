@@ -23,3 +23,6 @@
      ((agenda "")
       (alltodo ""))
      ((org-agenda-files personal-files))))))
+
+; amanda view
+; sort order

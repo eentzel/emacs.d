@@ -50,6 +50,9 @@
 ; Groovy mode
 (load "~/.emacs.d/lisp/groovy-mode-epe.el")
 
+; org-mode customizations - runs too soon :(
+; (load "~/.emacs.d/lisp/epe-org.el")
+
 ; GitHub fanciness
 (load "~/.emacs.d/lisp/md-preview.el")
 (load "~/.emacs.d/lisp/epe-github.el")
@@ -173,6 +176,10 @@
 ; but if other people use them, render them 4 spaces wide
 (setq-default tab-width 4)
 
+; asdf
+(require 'editorconfig)
+(editorconfig-mode 1)
+
 ;; Our Java properties files tend to use ' as an apostrophe rather
 ;; than a quote, so define it as a word character so syntax
 ;; highlighting doesn't get confused:
@@ -206,6 +213,7 @@
 (global-set-key "\C-cK" 'ack-same)
 (global-set-key "\C-c|" 'shell-command-on-buffer-file)
 (global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cp" 'org-capture)
 
 ; Turns out C-Backspace in Windows does a backward-kill-word.  Is
 ; there any way to rebind it in emacs for consistency?  e.g.:
@@ -214,6 +222,9 @@
 
 ; how hard is it to make emacsclient switch to the correct screen when invoked?
 (server-start)
+
+                                        ;
+(horizontal-scroll-bar-mode -1)
 
 ;; Fix path, which tends not to get set in OSX
 ;; From http://blog.gaz-jones.com/2012/02/01/setting_up_emacs_for_clojure_development.html
@@ -244,8 +255,11 @@
  '(desktop-save-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(fill-column 78)
+ '(groovy-electric-expand-delimiters-list nil)
+ '(haskell-process-type (quote stack-ghci))
+ '(haskell-program-name "stack ghci \"+.\"")
  '(ispell-program-name "aspell")
- '(js2-basic-offset 4)
+ '(js-indent-level 4)
  '(js2-mode-escape-quotes nil)
  '(mumamo-chunk-coloring (quote no-chunks-colored))
  '(ns-alternate-modifier (quote meta))
@@ -257,6 +271,9 @@
  '(org-agenda-span 6)
  '(org-agenda-todo-ignore-scheduled (quote future))
  '(org-log-into-drawer t)
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
  '(org-refile-targets (quote ((org-agenda-files :maxlevel . 2))))
  '(org-refile-use-outline-path (quote file))
  '(package-selected-packages

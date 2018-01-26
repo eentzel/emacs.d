@@ -33,6 +33,7 @@
   (disable-block (enabled-block))
   (enable-block name))
 
+; runs too soon?
 (add-hook 'restclient-mode-hook
   '(define-key restclient-mode-map (kbd "C-c e") 'mw-env))
 
