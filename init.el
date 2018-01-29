@@ -257,6 +257,9 @@
  '(org-agenda-span 6)
  '(org-agenda-todo-ignore-scheduled (quote future))
  '(org-log-into-drawer t)
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
  '(org-refile-targets (quote ((org-agenda-files :maxlevel . 2))))
  '(org-refile-use-outline-path (quote file))
  '(package-selected-packages
