@@ -1,9 +1,9 @@
 [submodule "feature-mode"]
 	path = feature-mode
-	url = https://github.com/michaelklishin/cucumber.el.git
+	url = git@github.com:michaelklishin/cucumber.el.git
 [submodule "egg"]
 	path = egg
-	url = https://github.com/bogolisk/egg.git
+	url = git@github.com:bogolisk/egg.git
 [submodule "anything-config"]
 	path = anything-config
 	url = git://repo.or.cz/anything-config.git
@@ -12,25 +12,25 @@
 	url = git@github.com:eentzel/yasnippet-jstl.git
 [submodule "yaml-mode"]
 	path = yaml-mode
-	url = https://github.com/yoshiki/yaml-mode.git
+	url = git@github.com:yoshiki/yaml-mode.git
 [submodule "full-ack"]
 	path = full-ack
-	url = https://github.com/eentzel/full-ack.git
+	url = git@github.com:eentzel/full-ack.git
 [submodule "tuareg-mode"]
 	path = tuareg-mode
-	url = https://github.com/afeinberg/tuareg-mode
+	url = git@github.com:afeinberg/tuareg-mode
 [submodule "Fill-Column-Indicator"]
 	path = Fill-Column-Indicator
-	url = https://github.com/alpaker/Fill-Column-Indicator.git
+	url = git@github.com:alpaker/Fill-Column-Indicator.git
 [submodule "expand-region.el"]
 	path = expand-region.el
-	url = https://github.com/magnars/expand-region.el.git
+	url = git@github.com:magnars/expand-region.el.git
 [submodule "mark-multiple.el"]
 	path = mark-multiple.el
-	url = https://github.com/magnars/mark-multiple.el.git
+	url = git@github.com:magnars/mark-multiple.el.git
 [submodule "js2-refactor.el"]
 	path = js2-refactor.el
-	url = https://github.com/magnars/js2-refactor.el.git
+	url = git@github.com:magnars/js2-refactor.el.git
 [submodule "yasnippet"]
 	path = yasnippet
-	url = https://github.com/capitaomorte/yasnippet
+	url = git@github.com:capitaomorte/yasnippet
