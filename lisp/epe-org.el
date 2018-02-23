@@ -9,7 +9,7 @@
         "~/Dropbox/org/home_office.org"))
 
 (setq work-files
-      '("~/Dropbox/org/tix.org" "~/Dropbox/org/home_office.org"))
+      '("~/Dropbox/org/career.org" "~/Dropbox/org/home_office.org"))
 
 (setq
  org-agenda-custom-commands
