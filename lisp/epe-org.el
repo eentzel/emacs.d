@@ -11,6 +11,9 @@
 (setq work-files
       '("~/Dropbox/org/career.org" "~/Dropbox/org/home_office.org"))
 
+(setq tendril-files
+      '("~/org/tendril.org"))
+
 (setq
  org-agenda-custom-commands
  (append
@@ -19,6 +22,10 @@
      ((agenda "")
       (alltodo ""))
      ((org-agenda-files work-files)))
+    ("t" "agena view for Tendril"
+     ((agenda "")
+      (alltodo ""))
+     ((org-agenda-files tendril-files)))
     ("h" "agenda view for home"
      ((agenda "")
       (alltodo ""))
