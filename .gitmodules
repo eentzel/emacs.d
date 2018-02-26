@@ -3,7 +3,7 @@
 	url = git@github.com:michaelklishin/cucumber.el.git
 [submodule "egg"]
 	path = egg
-	url = git@github.com:bogolisk/egg.git
+	url = git@github.com:byplayer/egg.git
 [submodule "anything-config"]
 	path = anything-config
 	url = git://repo.or.cz/anything-config.git
