@@ -51,3 +51,10 @@ except those in BLACKLIST"
 (defun sheval (cmd)
   "Return the (trimmed) stdout of running CMD in a shell"
   (replace-regexp-in-string "\n\\'" "" (shell-command-to-string cmd)))
+
+(defun capitalize-camel ()
+  (interactive)
+  (save-excursion
+    (upcase-region (point) (+ 1 (point)))))
+
+;; (global-set-key "\M-c" 'capitalize-camel)
