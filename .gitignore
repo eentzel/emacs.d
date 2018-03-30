@@ -1,6 +1,7 @@
 auto-save-list
 bookmarks
 recentf
+TAGS
 tramp
 *.elc
 .emacs.desktop
